@@ -454,7 +454,6 @@ body > nav {
       text-align: center;
     }
   }
-
   .menu {
     text-align: center;
     padding: 3em 1em;
@@ -477,14 +476,39 @@ body > nav {
 body > main > section.fonctionnement {
   margin: 2em;
 }
-body > main > section.fonctionnement > ul {
+> body > main > section.fonctionnement__choix {
   width: 15%;
   border: black;
+}
+> body > main > section.fonctionnement__choix > ul {
+  background-color: white;
+  border-radius: 25px;
+  margin: 20px 20px;
+  box-shadow: 0 5px 20px -2px rgba(0, 0, 0, 0.15);
+}
+> body > main > section.fonctionnement__choix > li {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 70px;
 }
 body > main > section.restaurants {
   margin: 2em;
 }
 
+body > footer {
+  display: flex;
+  justify-content: center;
+}
+> body > footer__titre {
+  color: #fff;
+  background: #4a4a4a1f;
+}
+> body > footer__content {
+  text-decoration: none;
+  color: #fff;
+}
 /***********************************/
 /***********************************/
 /************pages******************/

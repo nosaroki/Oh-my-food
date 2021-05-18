@@ -29,7 +29,7 @@
     </header>
 
     <!-- NAV -->
-    <!-- nav.menu>form>i+input  ?  h1.menu__slogan+h2.menu__slogan+button.explore -->
+    <!-- nav.jumbotron>(form>i+input)+(div.jumbotron__menu>h1.slogan+h2.slogan+button.explore) -->
 
     <nav class="jumbotron">
 
@@ -50,8 +50,8 @@
 
     <main>
         <section class="fonctionnement">
-            <h3>Fonctionnement</h3>
-            <ul>
+            <h3 class="fonctionnement__titre">Fonctionnement</h3>
+            <ul class="fonctionnement__choix">
                 <li>
                     <i class="fas fa-mobile-alt"></i>
                     <span>Choisissez un restaurant</span>
@@ -72,8 +72,8 @@
         </section>
 
         <section class="restaurants">
-            <h3>Restaurants</h3>
-            <figure>
+            <h3 class="restaurants__titrer">Restaurants</h3>
+            <figure class="restaurants__figure">
                 <img src="assets/images/restaurants/lpdg.jpg"
                     alt="La palette du goût" height="200px">
                 <figcaption>La palette du goût</figcaption>
@@ -108,9 +108,9 @@
     <!-- FOOTER -->
       <!-- footer>h3+(ul>li>a+i)*2+(ul>li>a)*2 -->
 
-    <footer>
-        <h3>ohmyfood</h3>
-        <ul>
+    <footer class="footer">
+        <h3 class="footer__titre">ohmyfood</h3>
+        <ul class="footer__content">
           <li>
             <a href=""><i class="fas fa-utensils"></i>Proposer un restaurant</a>
           </li>
