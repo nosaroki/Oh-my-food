@@ -474,23 +474,10 @@ body > nav {
   }*/
 }
 
-.fonctionnement__list > .fa-circle {
-  color: #3f3f3f;
-  padding-right: 5px;
+.fonctionnement {
+  margin: 2em;
 }
-.fonctionnement__list > .fa-mobile-alt {
-  color: #3f3f3f;
-  padding-right: 5px;
-}
-.fonctionnement__list > .fa-list {
-  color: #3f3f3f;
-  padding-right: 5px;
-}
-.fonctionnement__list > .fa-store {
-  color: #3f3f3f;
-  padding-right: 5px;
-}
-.fonctionnement > li {
+.fonctionnement__list > li {
   list-style: none;
   margin: 20px;
   position: relative;
@@ -499,7 +486,11 @@ body > nav {
   width: 23%;
   box-shadow: 1px 2px 5px lightgrey;
 }
-.fonctionnement > li::before {
+.fonctionnement__list > li > i {
+  color: #3f3f3f;
+  padding-right: 5px;
+}
+.fonctionnement__list.--accueil > li::before {
   content: "1";
   background-color: blueviolet;
   width: 25px;
@@ -509,13 +500,27 @@ body > nav {
   position: absolute;
   left: 0;
   top: calc(50% - 15px);
-  text-align: center;
   color: white;
 }
-.fonctionnement > li :hover {
-  background-color: blueviolet;
-}
 
+.restaurants {
+  padding: 1em;
+}
+.restaurants__titre {
+  margin: 2em;
+}
+.restaurants__figure {
+  border-radius: 10px;
+  box-shadow: 0 0 10px 2px;
+  width: 100%;
+  height: 400px;
+  margin: 1em 0;
+}
+.restaurants__figure > img {
+  height: 60%;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
 /***********************************/
 /***********************************/
 /************pages******************/
