@@ -9,6 +9,7 @@
     <title>Accueil Ohmyfood!</title>
     <meta name="description"
         content="Ohmyfood! est une entreprise de commande de repas en ligne. Notre concept permet aux utilisateurs de composer leur propre menu et réduire leur temps d’attente dans les restaurants car leur menu est préparé à l’avance. Plus de perte de temps à consulter la carte !">
+    
     <link rel="shortcut icon" href="assets/images/logo/ohmyfood@2x.svg" type="image/x-icon">
 
     <script src="https://kit.fontawesome.com/71444e5b5d.js" crossorigin="anonymous"></script>
@@ -46,24 +47,24 @@
     </nav>
 
     <!-- MAIN -->
-    <!-- main>(section.fonctionnement>h3+(ul>li>i+span)*3)+section.restaurants>h3+(fig>img+figcaption)*4 -->
+    <!-- main>(section.fonctionnement>h3+(ul.list>li>i+span)*3)-->
 
     <main>
         <section class="fonctionnement">
             <h3 class="fonctionnement__titre">Fonctionnement</h3>
-            <ul class="fonctionnement__choix">
+            <ul class="fonctionnement__list">
                 <li>
                     <i class="fas fa-mobile-alt"></i>
                     <span>Choisissez un restaurant</span>
                 </li>
             </ul>
-            <ul>
+            <ul class="fonctionnement__choix">
                 <li>
                     <i class="fas fa-list-ul"></i>
                     <span>Composez votre menu</span>
                 </li>
             </ul>
-            <ul>
+            <ul class="fonctionnement__choix">
                 <li>
                     <i class="fas fa-store"></i>
                     <span>Dégustez au restaurant</span>
@@ -71,6 +72,11 @@
             </ul>
         </section>
 
+    </main>
+
+    <!-- article>section.restaurants>h3+(fig>img+figcaption)*4  -->
+
+    <article>
         <section class="restaurants">
             <h3 class="restaurants__titrer">Restaurants</h3>
             <figure class="restaurants__figure">
@@ -100,8 +106,8 @@
                 <figcaption>Le délice des sens</figcaption>
             </figure>
         </section>
+    </article>
 
-    </main>
 
 
 

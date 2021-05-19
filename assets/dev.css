@@ -430,6 +430,7 @@ body > header {
 .jumbotron__menu button.explore {
   border-block: none;
   border-radius: 30px;
+  border-color: #fff;
   background: linear-gradient(#ff79da, #9356dc);
   color: white;
   height: 3em;
@@ -473,45 +474,67 @@ body > nav {
   }*/
 }
 
-body > main > section.fonctionnement {
-  margin: 2em;
+.fonctionnement__list > .fa-circle {
+  color: #3f3f3f;
+  padding-right: 5px;
 }
-> body > main > section.fonctionnement__choix {
-  width: 15%;
-  border: black;
+.fonctionnement__list > .fa-mobile-alt {
+  color: #3f3f3f;
+  padding-right: 5px;
 }
-> body > main > section.fonctionnement__choix > ul {
-  background-color: white;
-  border-radius: 25px;
-  margin: 20px 20px;
-  box-shadow: 0 5px 20px -2px rgba(0, 0, 0, 0.15);
+.fonctionnement__list > .fa-list {
+  color: #3f3f3f;
+  padding-right: 5px;
 }
-> body > main > section.fonctionnement__choix > li {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  height: 70px;
+.fonctionnement__list > .fa-store {
+  color: #3f3f3f;
+  padding-right: 5px;
 }
-body > main > section.restaurants {
-  margin: 2em;
+.fonctionnement > li {
+  list-style: none;
+  margin: 20px;
+  position: relative;
+  padding: 10px;
+  border-radius: 10px;
+  width: 23%;
+  box-shadow: 1px 2px 5px lightgrey;
+}
+.fonctionnement > li::before {
+  content: "1";
+  background-color: blueviolet;
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  border-radius: 1em;
+  position: absolute;
+  left: 0;
+  top: calc(50% - 15px);
+  text-align: center;
+  color: white;
+}
+.fonctionnement > li :hover {
+  background-color: blueviolet;
 }
 
-body > footer {
-  display: flex;
-  justify-content: center;
-}
-> body > footer__titre {
-  color: #fff;
-  background: #4a4a4a1f;
-}
-> body > footer__content {
-  text-decoration: none;
-  color: #fff;
-}
 /***********************************/
 /***********************************/
 /************pages******************/
+body > main {
+  display: block;
+  flex-direction: column;
+  align-items: center;
+}
+body > main .commander {
+  border-block: none;
+  border-radius: 30px;
+  border-color: #fff;
+  background: linear-gradient(#ff79da, #9356dc);
+  color: white;
+  height: 3em;
+  width: 13em;
+  box-shadow: 0 0 10px 1px silver;
+}
+
 /***********************************/
 /***********************************/
 /************themes*****************/
