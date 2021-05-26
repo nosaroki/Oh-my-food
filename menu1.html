@@ -23,11 +23,11 @@
 
     <!-- HEADER -->
 
-    <header>
+    <header class="headerbarre">
 
         <button class="retour" type="retour"><i class="fas fa-arrow-left"></i></button>
 
-        <img src="/Users/2ne/Desktop/OCR/PROJETS/P3_OSAROKIO_Nnéna/P3_ohmyfood/assets/images/logo/ohmyfood.png"
+        <img class="headerbarre__logo" src="assets/images/logo/ohmyfood.png"
             alt="Logo Ohmyfood!">
 
     </header>
@@ -38,13 +38,13 @@
 
 
         <!-- h1+i+section.entrees>h2+(div>h3+h4+p)*3 -->
-
+<img src="assets/images/restaurants/lpdg.jpg" alt="La palette du goût">
         <h1>La palette du goût</h1>
         <i class="far fa-heart"></i>
         
         <section class="entrees">
-            <h2>ENTRÉES</h2>
-            <div>
+            <h2 class="entrees__titre">ENTRÉES</h2>
+            <div class="entrees__menu">
                 <h3>Fricassée d'escargot</h3>
                 <h4>Au piment d'espelette</h4>
                 <p>25€</p>
@@ -64,8 +64,8 @@
         <!-- section.plats>h2+(div>h3+h4+p)*3 -->
 
         <section class="plats">
-            <h2>PLATS</h2>
-            <div>
+            <h2 class="plats__titre">PLATS</h2>
+            <div class="plats__menu">
                 <h3>Filet de boeuf aux herbes</h3>
                 <h4>Accompagné de sa ribambelle de légumes</h4>
                 <p>40€</p>
@@ -85,8 +85,8 @@
         <!-- section.desserts>h2+(div>h3+h4+p)*3 -->
 
         <section class="desserts">
-            <h2>DESSERTS</h2>
-            <div>
+            <h2 class="desserts__titre">DESSERTS</h2>
+            <div class="desserts__menu">
                 <h3>Paris-Brest</h3>
                 <h4>Revisité</h4>
                 <p>18€</p>
@@ -104,16 +104,16 @@
         </section>
 
         <button class="commander" type="commander">Commander</button>
-        <input class="commander" type="Commander"/>
+        
 
     </main>
 
   <!-- FOOTER -->
       <!-- footer>h3+(ul>li>a+i)*2+(ul>li>a)*2 -->
 
-    <footer>
-        <h3>ohmyfood</h3>
-        <ul>
+    <footer class="footer">
+        <h3 class="titre">ohmyfood</h3>
+        <ul class="content">
           <li>
             <a href=""><i class="fas fa-utensils"></i>Proposer un restaurant</a>
           </li>
@@ -121,7 +121,7 @@
             <a href=""><i class="fas fa-hands-helping"></i>Devenir partenaire</a>
           </li>
           <li><a href="">Mentions légales</a></li>
-          <li><a href="">Contact</a></li>
+          <li><a href="mailto:contact@ohmyfood.fr">Contact</a></li>
         </ul>
       </footer>
 
