@@ -23,10 +23,12 @@
 
 <body>
 
+    <!-- HEADER -->
+
     <header class="headerbarre">
         <img class="headerbarre__logo" src="assets/images/logo/ohmyfood.png" alt="Logo Ohmyfood!">
     </header>
-    <!-- HEADER -->
+
 
     <!-- NAV -->
     <!-- nav.jumbotron>(form>i+input)+(div.jumbotron__menu>h1.slogan+h2.slogan+button.explore) -->
@@ -80,7 +82,7 @@
                     <i class="fa fa-lg fa-heart-o"></i>
                     <span>Nouveau</span>
                 </figcaption>
-                <a href=""></a>
+                <a href="menu1.html"></a>
             </figure>
 
             <figure class="restaurants__figure">
@@ -90,7 +92,7 @@
                     <i class="fa fa-lg fa-heart-o"></i>
                     <span>Nouveau</span>
                 </figcaption>
-                <a href=""></a>
+                <a href="menu2.html"></a>
 
             </figure>
 
@@ -101,7 +103,7 @@
                     <i class="fa fa-lg fa-heart-o"></i>
                 </figcaption>
 
-                <a href=""></a>
+                <a href="menu3.html"></a>
 
             </figure>
 
@@ -112,7 +114,7 @@
                     <i class="fa fa-lg fa-heart-o"></i>
                 </figcaption>
 
-                <a href=""></a>
+                <a href="menu4.html"></a>
 
             </figure>
         </section>
@@ -139,6 +141,67 @@
     </footer>
 
     <!-- FOOTER -->
+
+    <div class="overlayAnimation" style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgb(206, 61, 242);
+    z-index: -1;">
+
+        <style>
+            .overlayAnimation {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+                z-index: -1;
+                animation: test 3s linear 1;
+            }
+
+            #loading {
+                display: inline-block;
+                position: absolute;
+                width: 300px;
+                height: 300px;
+                border: 3px solid rgba(255, 255, 255, .3);
+                border-radius: 50%;
+                border-top-color: #fff;
+                animation: spin 1s ease-in-out infinite;
+                -webkit-animation: spin 1s ease-in-out infinite;
+            }
+
+            @keyframes test {
+                0% {
+                    opacity: 1;
+                    z-index: 100;
+                }
+
+                100% {
+                    opacity: 0;
+                    z-index: -1;
+                }
+            }
+
+            @keyframes spin {
+                to {
+                    z-index: 10;
+                    -webkit-transform: rotate(360deg);
+                }
+            }
+
+            @-webkit-keyframes spin {
+                to {
+                    -webkit-transform: rotate(360deg);
+                }
+            }
+        </style>
+
+        <div id="loading"></div>
+
+    </div>
 
 </body>
 
