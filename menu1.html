@@ -26,7 +26,6 @@
     <header class="headerbarre">
         <a class="headerbarre__btnRetour" href="index.html"><i class="fas fa-arrow-left"></i></a>
         <img class="headerbarre__logo" src="assets/images/logo/ohmyfood.png" alt="Logo Ohmyfood!">
-
     </header>
 
     <!-- MENU -->
@@ -38,35 +37,44 @@
         </figure>
 
 
-        <section class="laCarte">
+        <article class="laCarte">
 
             <!-- h1+i+section.laCarte__entrees>h2+(ul>li>h3+h4+p)*3 -->
 
-            <h1 class="laCarte__titre">La palette du goût
-                <i class="far fa-heart"></i>
-            </h1>
+            <h1 class="laCarte__titre">La palette du goût</h1>
+
+            <div id="heart">
+                <i class="heart_still" aria-hidden="true"></i>
+                <i class="heart_animated"></i>
+            </div>
 
 
-            <section class="laCarte__entrees">
+            <section class="laCarte__plats">
                 <h2>ENTRÉES</h2>
                 <ul class="--menupage">
                     <li>
                         <h3>Fricassée d'escargot</h3>
-                        <h4>Au piment d'espelette</h4>
-                        <p>25€</p>
+                        <div>
+                            <h4>Au piment d'espelette</h4>
+                            <p>25€</p>
+                        </div>
                     </li>
-             
+
                     <li>
                         <h3>Foie gras de canard mi-cuit</h3>
-                        <h4>Et ses copeaux de truffe noire</h4>
-                        <p>35€</p>
+                        <div>
+                            <h4>Et ses copeaux de truffe noire</h4>
+                            <p>35€</p>
+                        </div>
                     </li>
-              
+
                     <li>
 
                         <h3>Oeuf au plat</h3>
-                        <h4>Assaisonné à la truffe sur lit de caviar</h4>
-                        <p>20€</p>
+                        <div>
+                            <h4>Assaisonné à la truffe sur lit de caviar</h4>
+                            <p>20€</p>
+                        </div>
                     </li>
                 </ul>
             </section>
@@ -78,61 +86,75 @@
                 <ul>
                     <li>
                         <h3>Filet de boeuf aux herbes</h3>
-                        <h4>Accompagné de sa ribambelle de légumes</h4>
-                        <p>40€</p>
+                        <div>
+                            <h4>Accompagné de sa ribambelle de légumes</h4>
+                            <p>40€</p>
+                        </div>
                     </li>
-               
+
                     <li>
                         <h3>Parmentier de queue de boeuf</h3>
-                        <h4>À la truffe noire sur sa purée de panais</h4>
-                        <p>35€</p>
+                        <div>
+                            <h4>À la truffe noire sur sa purée de panais</h4>
+                            <p>35€</p>
+                        </div>
                     </li>
-                
+
                     <li>
                         <h3>Filet de Turbot</h3>
-                        <h4>Aux agrumes</h4>
-                        <p>44€</p>
+                        <div>
+                            <h4>Aux agrumes</h4>
+                            <p>44€</p>
+                        </div>
                     </li>
                 </ul>
             </section>
 
             <!-- section.laCarte__desserts>h2+(ul>li>h3+h4+p)*3 -->
 
-            <section class="laCarte__desserts">
+            <section class="laCarte__plats">
                 <h2>DESSERTS</h2>
                 <ul>
                     <li>
                         <h3>Paris-Brest</h3>
-                        <h4>Revisité</h4>
-                        <p>18€</p>
+                        <div>
+                            <h4>Revisité</h4>
+                            <p>18€</p>
+                        </div>
                     </li>
-                
+
                     <li>
                         <h3>Macaron au chocolat d'exception</h3>
-                        <h4>Et glace à la vanille de Madagascar</h4>
-                        <p>22€</p>
+                        <div>
+                            <h4>Et glace à la vanille de Madagascar</h4>
+                            <p>22€</p>
+                        </div>
                     </li>
-               
+
                     <li>
                         <h3>Mousse au chocolat</h3>
-                        <h4>Au piment d'espelette et à la truffe noire</h4>
-                        <p>23€</p>
+                        <div>
+                            <h4>Au piment d'espelette et à la truffe noire</h4>
+                            <p>23€</p>
+                        </div>
                     </li>
                 </ul>
             </section>
-          <div class="order">
+
+            <div class="order">
                 <button class="order__commander" type="commander">Commander</button>
-           </div>
-        </section>
+            </div>
+
+        </article>
 
     </main>
 
     <!-- FOOTER -->
     <!-- footer>h3+(ul>li>a+i)*2+(ul>li>a)*2 -->
 
-    <footer class="footer__menu">
-        <h3 class="titre">ohmyfood</h3>
-        <ul class="content">
+    <footer class="footer">
+        <h3 class="footer__titre">ohmyfood</h3>
+        <ul class="footer__content">
             <li>
                 <a href=""><i class="fas fa-utensils"></i>Proposer un restaurant</a>
             </li>
@@ -143,5 +165,7 @@
             <li><a href="mailto:contact@ohmyfood.fr">Contact</a></li>
         </ul>
     </footer>
+
+    <!-- FOOTER -->
 
 </body>

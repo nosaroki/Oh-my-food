@@ -23,12 +23,10 @@
 
     <!-- HEADER -->
 
-    <header>
+    <header class="headerbarre">
 
-        <button class="retour" type="retour"><i class="fas fa-arrow-left"></i></button>
-
-        <img src="assets/images/logo/ohmyfood.png"
-            alt="Logo Ohmyfood!">
+        <a class="headerbarre__btnRetour" href="index.html"><i class="fas fa-arrow-left"></i></a>
+        <img class="headerbarre__logo" src="assets/images/logo/ohmyfood.png" alt="Logo Ohmyfood!">
 
     </header>
 
@@ -36,92 +34,127 @@
 
     <main>
 
+        <figure class="bg">
+            <img class="bg__img" src="assets/images/restaurants/alf.jpg" alt="La palette du goût">
+        </figure>
 
-        <!-- h1+i+section.entrees>h2+(div>h3+h4+p)*3 -->
 
-        <h1>À la française</h1>
-        <i class="far fa-heart"></i>
+        <article class="laCarte">
+
+        <!-- h1+i+section.entrees>h2+(ul>li>h3+h4+p)*3 -->
+
+        <h1 class="laCarte__titre">À la française
+             <i class="far fa-heart"></i>
+        </h1>
+       
         
-        <section class="entrees">
+        <section class="laCarte__plats">
             <h2>ENTRÉES</h2>
-            <div>
+            <ul class="--menupage">
+            <li>
                 <h3>Tartare de poulpe acidulé</h3>
+                <div>
                 <h4>Aux zests d'orange</h4>
                 <p>25€</p>
-            </div>
-            <div>
+                </div>
+            </li>
+            <li>
                 <h3>Velouté de légumes d'antan</h3>
+                <div>
                 <h4>Carotte, panais, topinambour</h4>
                 <p>35€</p>
-            </div>
-            <div>
+                </div>
+            </li>
+            <li>
                 <h3>Soupe à l'oignon</h3>
+                <div>
                 <h4>Revisitée</h4>
                 <p>20€</p>
-            </div>
+                </div>
+            </li>
+            </ul>
         </section>
 
-        <!-- section.plats>h2+(div>h3+h4+p)*3 -->
+        <!-- section.plats>h2+(ul>li>h3+h4+p)*3 -->
 
-        <section class="plats">
+        <section class="laCarte__plats">
             <h2>PLATS</h2>
-            <div>
+            <ul>
+            <li>
                 <h3>Coquilles Saint-Jacques</h3>
+                <div>
                 <h4>Acoompagnées d'une purée de panais</h4>
                 <p>40€</p>
-            </div>
-            <div>
+                </div>
+            </li>
+            <li>
                 <h3>Magret de canard</h3>
+                <div>
                 <h4>Et parmentier de pommes de terres</h4>
                 <p>35€</p>
             </div>
-            <div>
+            </li>
+            <li>
                 <h3>Pigeonneau d'Ille-et-Vilaine</h3>
+                <div>
                 <h4>Sur son lit de gnocchis aux légumes</h4>
                 <p>44€</p>
-            </div>
+                </div>
+            </li>
+        </ul>
         </section>
 
-        <!-- section.desserts>h2+(div>h3+h4+p)*3 -->
+        <!-- section.desserts>h2+(ul>li>h3+h4+p)*3 -->
 
-        <section class="desserts">
+        <section class="laCarte__plats">
             <h2>DESSERTS</h2>
-            <div>
+            <ul>
+            <li>
                 <h3>Pétales de violettes glacés</h3>
+                <div>
                 <h4>Et purée de noisettes</h4>
                 <p>18€</p>
-            </div>
-            <div>
+                </div>
+            </li>
+            <li>
                 <h3>Fondant aux chocolat</h3>
+                <div>
                 <h4>Revisité</h4>
                 <p>22€</p>
-            </div>
-            <div>
+                </div>
+            </li>
+            <li>
                 <h3>Millefeuille croustillant</h3>
+                <div>
                 <h4>Myrtilles et pâte d'amande</h4>
                 <p>23€</p>
-            </div>
+                </div>
+            </li>
+        </ul>
         </section>
 
-        <button class="commander" type="commander">Commander</button>
+        <div class="order">
+            <button class="order__commander" type="commander">Commander</button>
+        </div>
+       </article>
 
     </main>
 
   <!-- FOOTER -->
       <!-- footer>h3+(ul>li>a+i)*2+(ul>li>a)*2 -->
 
-    <footer>
-        <h3>ohmyfood</h3>
-        <ul>
-          <li>
-            <a href=""><i class="fas fa-utensils"></i>Proposer un restaurant</a>
-          </li>
-          <li>
-            <a href=""><i class="fas fa-hands-helping"></i>Devenir partenaire</a>
-          </li>
-          <li><a href="">Mentions légales</a></li>
-          <li><a href="">Contact</a></li>
+      <footer class="footer">
+        <h3 class="footer__titre">ohmyfood</h3>
+        <ul class="footer__content">
+            <li>
+                <a href=""><i class="fas fa-utensils"></i>Proposer un restaurant</a>
+            </li>
+            <li>
+                <a href=""><i class="fas fa-hands-helping"></i>Devenir partenaire</a>
+            </li>
+            <li><a href="">Mentions légales</a></li>
+            <li><a href="mailto:contact@ohmyfood.fr">Contact</a></li>
         </ul>
-      </footer>
+    </footer>
 
 </body>

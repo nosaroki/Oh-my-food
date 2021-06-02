@@ -23,106 +23,139 @@
 
     <!-- HEADER -->
 
-    <header>
-
-        <button class="retour" type="retour"><i class="fas fa-arrow-left"></i></button>
-
-        <img src="assets/images/logo/ohmyfood.png"
-            alt="Logo Ohmyfood!">
-
+    <header class="headerbarre">
+        <a class="headerbarre__btnRetour" href="index.html"><i class="fas fa-arrow-left"></i></a>
+        <img class="headerbarre__logo" src="assets/images/logo/ohmyfood.png" alt="Logo Ohmyfood!">
     </header>
 
 <!-- MENU -->
 
     <main>
 
+        <figure class="bg">
+            <img class="bg__img" src="assets/images/restaurants/lpdg.jpg" alt="La palette du goût">
+        </figure>
 
-        <!-- h1+i+section.entrees>h2+(div>h3+h4+p)*3 -->
 
-        <h1>Le délice des sens</h1>
-        <i class="far fa-heart"></i>
+        <!-- h1+i+section.entrees>h2+(ul>div>h3+h4+p)*3 -->
+
+        <article class="laCarte">
+
+
+        <h1 class="laCarte__titre">Le délice des sens
+            <i class="far fa-heart"></i> 
+        </h1>
+       
         
-        <section class="entrees">
+        <section class="laCarte__plats">
             <h2>ENTRÉES</h2>
-            <div>
+            <ul class="--menupage">
+            <li>
                 <h3>Tartare de thon</h3>
+                <div>
                 <h4>Assaisonnée au yuzu</h4>
                 <p>25€</p>
-            </div>
-            <div>
+                </div>
+            </li>
+            <li>
                 <h3>Bouchée de homard croustillant</h3>
+                <div>
                 <h4>Et sa farandole de petits légumes</h4>
                 <p>35€</p>
-            </div>
-            <div>
+                </div>
+            </li>
+            <li>
                 <h3>Velouté de cèpes</h3>
+                <div>
                 <h4>Aux truffes</h4>
                 <p>20€</p>
-            </div>
+                </div>
+            </li>
+        </ul>
         </section>
 
-        <!-- section.plats>h2+(div>h3+h4+p)*3 -->
+        <!-- section.plats>h2+(ul>li>h3+h4+p)*3 -->
 
-        <section class="plats">
+        <section class="laCarte__plats">
             <h2>PLATS</h2>
-            <div>
+            <ul>
+            <li>
                 <h3>Poulet rôti aux herbes de provence</h3>
+                <div>
                 <h4>Et sa crème de truffe</h4>
                 <p>40€</p>
-            </div>
-            <div>
+                </div>
+            </li>
+            <li>
                 <h3>Langouste rôtie</h3>
+                <div>
                 <h4>Et ses légumes de saison</h4>
                 <p>35€</p>
-            </div>
-            <div>
+                </div>
+            </li>
+            <li>
                 <h3>Côte de boeuf angus</h3>
+                <div>
                 <h4>Et sa purée de panais</h4>
                 <p>44€</p>
-            </div>
+                </div>
+            </li>
+        </ul>
         </section>
 
-        <!-- section.desserts>h2+(div>h3+h4+p)*3 -->
+        <!-- section.desserts>h2+(ul>li>h3+h4+p)*3 -->
 
-        <section class="desserts">
+        <section class="laCarte__plats">
             <h2>DESSERTS</h2>
-            <div>
+            <ul>
+            <li>
                 <h3>Farandole de desserts</h3>
+                <div>
                 <h4>Du chef</h4>
                 <p>18€</p>
-            </div>
-            <div>
+                </div>
+            </li>
+            <li>
                 <h3>Crème brulée</h3>
+                <div>
                 <h4>Revisitée</h4>
                 <p>22€</p>
-            </div>
-            <div>
+                </div>
+            </li>
+            <li>
                 <h3>Tiramisu</h3>
+                <div>
                 <h4>À la noisette</h4>
                 <p>23€</p>
-            </div>
+                </div>
+            </li>
+        </ul>
         </section>
 
-        <button class="commander" type="commander">Commander</button>
+        <div class="order">
+            <button class="order__commander" type="commander">Commander</button>
+        </div>
+
+</article>
 
     </main>
 
   <!-- FOOTER -->
     <!-- footer>h3+(ul>li>a+i)*2+(ul>li>a)*2 -->
 
-    <footer>
-        <h3>ohmyfood</h3>
-        <ul>
-          <li>
-            <a href=""><i class="fas fa-utensils"></i>Proposer un restaurant</a>
-          </li>
-          <li>
-            <a href=""><i class="fas fa-hands-helping"></i>Devenir partenaire</a>
-          </li>
-          <li><a href="">Mentions légales</a></li>
-          <li><a href="">Contact</a></li>
+    <footer class="footer">
+        <h3 class="footer__titre">ohmyfood</h3>
+        <ul class="footer__content">
+            <li>
+                <a href=""><i class="fas fa-utensils"></i>Proposer un restaurant</a>
+            </li>
+            <li>
+                <a href=""><i class="fas fa-hands-helping"></i>Devenir partenaire</a>
+            </li>
+            <li><a href="">Mentions légales</a></li>
+            <li><a href="mailto:contact@ohmyfood.fr">Contact</a></li>
         </ul>
-      </footer>
+    </footer>
 
      
 </body>

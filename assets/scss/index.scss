@@ -102,13 +102,6 @@ $ok: 1em;
   display: flex;
   justify-content: center;
   @include headerbarre(1rem);
-
-  &__logo {
-  }
-  &__goBack {
-    & > i {
-    }
-  }
 }
 
 //NAV
@@ -230,27 +223,25 @@ body {
     }
   }
 
-  > ul {
-    &.--accueil {
-      > li {
-        &::before {
-          background-color: #9356dc;
-          width: 2em;
-          height: 2em;
-          padding: 5px;
-          border-radius: 2em;
-          position: absolute;
-          left: -10px;
-          top: 1.5em;
-          color: white;
-          text-align: center;
-          line-height: 2rem;
-        }
+  &.--accueil {
+    > li {
+      &::before {
+        background-color: #9356dc;
+        width: 2em;
+        height: 2em;
+        padding: 5px;
+        border-radius: 2em;
+        position: absolute;
+        left: -10px;
+        top: 1.5em;
+        color: white;
+        text-align: center;
+        line-height: 2rem;
+      }
 
-        @for $i from 1 through 3 {
-          &:nth-child(#{$i}):before {
-            content: "#{$i}";
-          }
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}):before {
+          content: "#{$i}";
         }
       }
     }
@@ -355,21 +346,28 @@ body {
   color: $white;
   padding: 8px 0px 20px 10px;
 
-  .titre {
+  &__titre {
     margin: 2em;
   }
+
+  &__content {
+    > li {
+      > a {
+        text-decoration: none;
+        color: $white;
+        font-family: "Roboto";
+        line-height: 25px;
+      }
+    }
+  }
+
 }
 
-.content > li > a {
-  text-decoration: none;
-  color: $white;
-  font-family: "Roboto";
-  line-height: 25px;
-}
 
 .footer {
   @include footerbloc();
 }
+
 // .__titre {
 //   margin: 2em;
 // }
@@ -470,27 +468,16 @@ body {
   font-size: 1.5em;
 }
 
-@mixin laCarte__titre {
-}
-@mixin laCarte__entrees {
-}
 @mixin laCarte__plats {
-}
-@mixin laCarte__desserts {
 }
 
 @mixin laCarte {
   &__titre {
     @include laCarte__titre();
   }
-  &__entrees {
-    @include laCarte__entrees();
-  }
+
   &__plats {
     @include laCarte__plats();
-  }
-  &__desserts {
-    @include laCarte__desserts();
   }
 }
 
@@ -507,7 +494,7 @@ body {
 
 .bg {
   margin: 0;
-  position: absolute;
+
   &__img {
     width: 100%;
   }
@@ -516,8 +503,7 @@ body {
 .laCarte {
   background-color: $lightgrey;
   border-radius: 2em 2em 0 0;
-  margin-top: 45em;
-  position: absolute;
+
   width: 100%;
   /*&::before{
     content: "";
@@ -535,28 +521,67 @@ body {
     text-align: center;
     font-family: "Shrikhand";
   }
-  &__entrees,
-  &__plats,
-  &__desserts {
+
+  #heart {
+    > .heart_still {
+      ::before {
+      }
+      > .heart_animated {
+        ::before {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-48%);
+          bottom: 3px;
+          font-size: 0;
+          background: linear-gradient(#ff79da, #9356dc);
+          background: -webkit-linear-gradient(#ff79da, #9356dc);
+          transition: all 0.4s ease-in-out;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+    }
+  }
+
+  &__plats {
     > h2 {
       padding-left: 2em;
       font-weight: 300;
+      
+      >h2::before{
+        background-color: #99e2d0;
+        content: "";
+        height: 3px;
+        width: 40px;
+        left: 6px;
+        bottom: 0;
+        position: absolute;
+      }
     }
     > ul {
       @include fonctionnement__list();
 
       > li {
         background-color: $white;
+        &:hover {
+          background-color: $white;
+        }
 
-        > h4 {
-          font-weight: 300;
+        > h3 {
+        }
 
-          > p {
-            display: flex;
-            flex-direction: row-reverse;
-            align-items: flex-end;
-            position: relative;
-            bottom: 4em;
+        div {
+          display: flex;
+          > h4 {
+            font-weight: 300;
+
+            > p {
+              display: flex;
+              flex-direction: row-reverse;
+              align-items: flex-end;
+              position: relative;
+              bottom: 4em;
+            }
           }
         }
       }
@@ -577,6 +602,10 @@ body {
 
 .footer {
   @include footerbloc();
+
+  > ul {
+    padding-left: 2em;
+  }
 }
 
 //MENU-2
