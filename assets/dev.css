@@ -449,6 +449,11 @@ body > header {
   box-shadow: 0 0 10px 1px silver;
   cursor: pointer;
 }
+.jumbotron__menu button.explore:hover {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  background-blend-mode: lighten;
+  background-color: #b389e7;
+}
 
 body > nav {
   /*form {
@@ -606,7 +611,73 @@ body > nav {
   font-family: "Roboto";
   line-height: 25px;
 }
+.footer__content > li > a > .fa-utensils {
+  padding-right: 1em;
+}
+.footer__content > li > a > .fa-hands-helping {
+  padding-right: 0.5em;
+}
 
+.overlayAnimation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #ce3df2;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  z-index: -1;
+  animation: test 3s linear 1;
+}
+.overlayAnimation__title {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 42%;
+  font-family: "Shrikhand", serif;
+  color: #c7bc5bf6;
+  font-weight: normal;
+  font-size: 40px;
+  letter-spacing: 8px;
+}
+
+#loading {
+  display: inline-block;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes test {
+  0% {
+    opacity: 1;
+    z-index: 100;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@keyframes spin {
+  to {
+    z-index: 10;
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
 /***********************************/
 /***********************************/
 /************pages******************/
@@ -633,51 +704,39 @@ body > nav {
 }
 .bg__img {
   width: 100%;
+  max-height: 400px;
+  object-fit: cover;
 }
 
 .laCarte {
   background-color: #f5f5f5;
   border-radius: 2em 2em 0 0;
+  margin-top: -6em;
   width: 100%;
-  /*&::before{
-    content: "";
-    border-radius: 2em 2em 0 0;
-    width: 100%;
-    height: 3em;
-    display: block;
-    position: absolute;
-    top: -3em;
-    left: 0;
-    background-color: $lightgrey;
-  }*/
+  padding-bottom: 1em;
+  position: relative;
 }
 .laCarte__titre {
   text-align: center;
   font-family: "Shrikhand";
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  padding-left: 1.5em;
 }
-.laCarte #heart > .heart_still > .heart_animated ::before {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-48%);
-  bottom: 3px;
-  font-size: 0;
-  background: linear-gradient(#ff79da, #9356dc);
-  background: -webkit-linear-gradient(#ff79da, #9356dc);
-  transition: all 0.4s ease-in-out;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.laCarte__titre > i:hover::before {
+  content: "💜";
 }
 .laCarte__plats > h2 {
   padding-left: 2em;
-  font-weight: 300;
 }
-.laCarte__plats > h2 > h2::before {
+.laCarte__plats > h2::after {
   background-color: #99e2d0;
   content: "";
   height: 3px;
-  width: 40px;
-  left: 6px;
-  bottom: 0;
+  width: 3em;
+  top: 36.2em;
+  left: 2em;
   position: absolute;
 }
 .laCarte__plats > ul > li {
@@ -723,22 +782,69 @@ body > nav {
 }
 .laCarte__plats > ul > li {
   background-color: #fff;
+  padding: 0;
+  animation-delay: 100ms;
 }
 .laCarte__plats > ul > li:hover {
   background-color: #fff;
 }
 .laCarte__plats > ul > li div {
   display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
-.laCarte__plats > ul > li div > h4 {
-  font-weight: 300;
+.laCarte__plats > ul > li div.box {
+  height: 6em;
+  top: 0;
+  right: 0;
+  border-radius: 0 25px 25px 0;
+  width: 100%;
 }
-.laCarte__plats > ul > li div > h4 > p {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: flex-end;
+.laCarte__plats > ul > li div.box > h3 {
   position: relative;
-  bottom: 4em;
+  padding: 1em 0 0.2em 0.8em;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.laCarte__plats > ul > li div.box > h4 {
+  font-weight: 300;
+  padding: 0 1em;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.laCarte__plats > ul > li div > .price {
+  position: absolute;
+  right: 20px;
+  bottom: 0px;
+  display: inline-block;
+  height: 40px;
+  transition: 400ms;
+}
+.laCarte__plats > ul > li div > .hover {
+  display: block;
+  font-size: 1em;
+  color: white;
+  text-align: center;
+  height: 40px;
+  padding: 10px 0;
+  width: 55px;
+  line-height: 40px;
+  background-color: #99e2d0;
+  border-radius: 0 15px 15px 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateX(55px);
+  transition: 400ms;
+}
+.laCarte__plats > ul > li div > .hover i {
+  display: inline-block;
+  font-style: normal;
+  line-height: 1;
 }
 
 .order {
@@ -758,6 +864,11 @@ body > nav {
   box-shadow: 0 0 10px 1px silver;
   cursor: pointer;
 }
+.order__commander:hover {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  background-blend-mode: lighten;
+  background-color: #b389e7;
+}
 
 .footer {
   background: #3f3f3f;
@@ -773,6 +884,12 @@ body > nav {
   font-family: "Roboto";
   line-height: 25px;
 }
+.footer__content > li > a > .fa-utensils {
+  padding-right: 1em;
+}
+.footer__content > li > a > .fa-hands-helping {
+  padding-right: 0.5em;
+}
 .footer > ul {
   padding-left: 2em;
 }
@@ -783,7 +900,5 @@ body > nav {
 /***********************************/
 /***********************************/
 /************vendors****************/
-/***********************************/
-/***********************************/
 
 /*# sourceMappingURL=dev.css.map */
