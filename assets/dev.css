@@ -729,14 +729,20 @@ body > nav {
 }
 .laCarte__plats > h2 {
   padding-left: 2em;
+  position: relative;
 }
 .laCarte__plats > h2::after {
   background-color: #99e2d0;
   content: "";
   height: 3px;
   width: 3em;
+  bottom: -0.2em;
   left: 2em;
   position: absolute;
+}
+.laCarte__plats > ul {
+  animation: animationMenu 1s ease-in 1;
+  overflow: hidden;
 }
 .laCarte__plats > ul > li {
   list-style: none;
@@ -790,11 +796,9 @@ body > nav {
 }
 .laCarte__plats > ul > li > h3 {
   position: relative;
-  margin-top: 0;
+  margin-top: 1rem;
 }
 .laCarte__plats > ul > li div {
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
 }
 .laCarte__plats > ul > li div.box {
@@ -806,7 +810,6 @@ body > nav {
   width: 100%;
   height: 100%;
   border-radius: 30px;
-  padding-left: 2em;
 }
 .laCarte__plats > ul > li div.box > h4 {
   font-weight: 300;
@@ -814,14 +817,15 @@ body > nav {
   padding-left: 2em;
   white-space: nowrap;
   text-overflow: ellipsis;
+  margin-bottom: 0.5em;
 }
-.laCarte__plats > ul > li div.box::before ::before {
+.laCarte__plats > ul > li div.box::before {
   content: "✓";
   position: absolute;
   right: -2em;
   top: 30%;
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   text-align: center;
   font-size: 2em;
   color: #99e2d0;
@@ -843,18 +847,17 @@ body > nav {
   position: relative;
 }
 .laCarte__plats > ul > li div > .price {
-  position: absolute;
   right: 20px;
   bottom: 0px;
   display: inline-block;
   height: 40px;
   transition: 400ms;
-  padding-right: 2em;
+  padding-right: 1rem;
 }
-.laCarte__plats > ul li:hover .ok::after {
+.laCarte__plats > ul li:hover .box::after {
   width: 200px;
 }
-.laCarte__plats > ul li:hover .ok::before {
+.laCarte__plats > ul li:hover .box::before {
   transform: rotate(360deg);
   right: 4rem;
 }
@@ -863,8 +866,8 @@ body > nav {
 }
 
 .laCarte__plats > ul > li:hover > div:before {
-  background: red;
-  right: 5%;
+  background: white;
+  right: 3%;
   z-index: 1;
 }
 
@@ -920,6 +923,14 @@ body > nav {
   padding-left: 2em;
 }
 
+@keyframes animationMenu {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 400px;
+  }
+}
 /***********************************/
 /***********************************/
 /************themes*****************/
