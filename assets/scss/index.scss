@@ -275,7 +275,9 @@ body {
   }
 
   >a{
-  >figure {
+    color: black;
+    
+  &__figure {
     border-radius: 10px;
     box-shadow: 0 0 10px -2px;
     width: 100%;
@@ -292,7 +294,6 @@ body {
     > figcaption {
       padding: 1em;
       font-weight: bold;
-      color: black;
 
       > i {
         display: flex;
