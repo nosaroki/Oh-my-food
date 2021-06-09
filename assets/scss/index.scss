@@ -115,10 +115,6 @@ $ok: 1em;
   text-align: center;
   background-color: $darkgrey;
   padding: 1em 0;
-  > * {
-  }
-  > i {
-  }
 
   > input {
     font-weight: bolder;
@@ -133,8 +129,6 @@ $ok: 1em;
   padding: 3em 1em;
   background-color: $lightgrey;
 
-  > h1.slogan {
-  }
   > h2.slogan {
     font-weight: 100;
   }
@@ -280,7 +274,8 @@ body {
     margin: 2em;
   }
 
-  &__figure {
+  >a{
+  >figure {
     border-radius: 10px;
     box-shadow: 0 0 10px -2px;
     width: 100%;
@@ -297,6 +292,7 @@ body {
     > figcaption {
       padding: 1em;
       font-weight: bold;
+      color: black;
 
       > i {
         display: flex;
@@ -309,7 +305,7 @@ body {
           content: "\1F49C";
         }
       }
-
+    }
       // > .heart_animated{
       //   &:hover::before {
       //     // background: linear-gradient($mauve, $rose);
