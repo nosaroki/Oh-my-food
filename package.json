@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass assets/scss/index.scss assets/dev.css -w"
+    "sass": "sass assets/scss/index.scss assets/dev.css -w",
+    "prefix": "postcss assets/dev.css --use autoprefixer ./assets/scss/prefixed"
   },
   "repository": {
     "type": "git",

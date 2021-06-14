@@ -354,14 +354,12 @@ ul {
   list-style: none;
 }
 
-/**/
-a {
-  text-decoration: none;
-  color: black;
-}
-
 ul {
   padding: 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 /**/
@@ -417,6 +415,7 @@ body > header {
   justify-content: center;
   padding: 1rem;
   box-shadow: 0 0 10px 1px silver;
+  height: 50px;
 }
 
 .jumbotron__map {
@@ -543,7 +542,10 @@ body > nav {
 .restaurants__titre {
   margin: 2em;
 }
-.restaurants__figure {
+.restaurants__content > a {
+  color: black;
+}
+.restaurants__content > a > figure {
   border-radius: 10px;
   box-shadow: 0 0 10px -2px;
   width: 100%;
@@ -551,17 +553,17 @@ body > nav {
   margin: 1em 0;
   position: relative;
 }
-.restaurants__figure > img {
+.restaurants__content > a > figure > img {
   height: 75%;
   width: 100%;
   border-radius: 10px 10px 0 0;
   object-fit: cover;
 }
-.restaurants__figure > figcaption {
+.restaurants__content > a > figure > figcaption {
   padding: 1em;
   font-weight: bold;
 }
-.restaurants__figure > figcaption > i {
+.restaurants__content > a > figure > figcaption > i {
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-start;
@@ -569,15 +571,15 @@ body > nav {
   bottom: 1em;
   z-index: 101;
 }
-.restaurants__figure > figcaption > i:hover::before {
+.restaurants__content > a > figure > figcaption > i:hover::before {
   content: "💜";
 }
-.restaurants__figure > figcaption > p {
+.restaurants__content > a > figure > figcaption > p {
   margin: 0;
   font-weight: 300;
   padding-top: 0.5em;
 }
-.restaurants__figure > figcaption > span {
+.restaurants__content > a > figure > figcaption > span {
   color: #33a28a;
   background-color: #8ee1cf;
   font-size: large;
@@ -587,7 +589,7 @@ body > nav {
   padding: 0.5em;
   border-radius: 5px;
 }
-.restaurants__figure a::before {
+.restaurants__content > a a::before {
   content: "";
   z-index: 100;
   position: absolute;
@@ -686,15 +688,12 @@ body > nav {
   justify-content: center;
   padding: 1em;
   box-shadow: 0 0 10px 1px silver;
+  height: 50px;
 }
 .headerbarre__btnRetour {
   position: absolute;
   left: 1em;
-  top: 0;
-  height: 20%;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
+  top: 1.3em;
   color: black;
   font-size: 1.5em;
 }
@@ -717,7 +716,6 @@ body > nav {
   position: relative;
 }
 .laCarte__titre {
-  text-align: center;
   font-family: "Shrikhand";
   display: flex;
   justify-content: space-between;
@@ -929,6 +927,95 @@ body > nav {
   }
   100% {
     height: 400px;
+  }
+}
+@media only screen and (min-width: 501px) and (max-width: 999px) {
+  body .fonctionnement__titre {
+    text-align: center;
+  }
+  body .fonctionnement__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  body .fonctionnement__list > li {
+    padding: 1em;
+    font-size: small;
+  }
+  body .fonctionnement__list > li ::before {
+    width: 1em;
+    height: 1em;
+    top: 0.5em;
+    line-height: 1rem;
+  }
+  body .restaurants__titre {
+    text-align: center;
+    margin: 1em;
+  }
+  body .restaurants__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  body .restaurants__content > a {
+    margin: 10px;
+  }
+  body .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  body .footer__content {
+    display: flex;
+    padding-left: 1em;
+  }
+  body .footer__content > li {
+    margin: 1rem;
+    font-size: small;
+  }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1499px) {
+  body .fonctionnement__titre {
+    text-align: center;
+  }
+  body .fonctionnement__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  body .restaurants__titre {
+    text-align: center;
+    margin: 1em;
+  }
+  body .restaurants__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  body .restaurants__content > a {
+    margin: 10px;
+  }
+  body .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  body .footer__content {
+    display: flex;
+  }
+  body .footer__content > li {
+    margin: 1rem 2.5rem;
+  }
+}
+@media only screen and (min-width: 501px) and (max-width: 999px) {
+  body .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  body .footer__content {
+    display: flex;
+    padding-left: 1em;
+  }
+  body .footer__content > li {
+    margin: 1rem;
+    font-size: small;
   }
 }
 /***********************************/

@@ -35,7 +35,7 @@
 //VARIABLES
 $mauve: #9356dc;
 $rose: #ff79da;
-$turquoise: #99e2d0 ;
+$turquoise: #99e2d0;
 $white: #fff;
 $black: #000;
 $verydarkergrey: rgb(63, 63, 63);
@@ -46,7 +46,7 @@ $lightgrey: #f5f5f5;
 $lightgreen: rgb(142, 225, 207);
 $darkgreen: rgb(51, 162, 138);
 $QUERY_MOBILE_MAX: 499px;
-$QUERY_TAB_MIN: 500px;
+$QUERY_TAB_MIN: 501px;
 $QUERY_TAB_MAX: 999px;
 $QUERY_DESKTOP_MIN: 1000px;
 $QUERY_DESKTOP_MAX: 1499px;
@@ -101,6 +101,7 @@ $ok: 1em;
 @mixin headerbarre($param: $ok) {
   padding: $param;
   box-shadow: 0 0 10px 1px $darkergrey;
+  height: 50px;
 }
 
 .headerbarre {
@@ -274,81 +275,68 @@ body {
     margin: 2em;
   }
 
-  >a{
-    color: black;
-    
-  &__figure {
-    border-radius: 10px;
-    box-shadow: 0 0 10px -2px;
-    width: 100%;
-    height: 300px;
-    margin: 1em 0;
-    position: relative;
+  &__content {
+    > a {
+      color: black;
 
-    > img {
-      height: 75%;
-      width: 100%;
-      border-radius: 10px 10px 0 0;
-      object-fit: cover;
-    }
-    > figcaption {
-      padding: 1em;
-      font-weight: bold;
-
-      > i {
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: flex-start;
+      > figure {
+        border-radius: 10px;
+        box-shadow: 0 0 10px -2px;
+        width: 100%;
+        height: 300px;
+        margin: 1em 0;
         position: relative;
-        bottom: 1em;
-        z-index: 101;
-        &:hover::before {
-          content: "\1F49C";
+
+        > img {
+          height: 75%;
+          width: 100%;
+          border-radius: 10px 10px 0 0;
+          object-fit: cover;
+        }
+        > figcaption {
+          padding: 1em;
+          font-weight: bold;
+
+          > i {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+            position: relative;
+            bottom: 1em;
+            z-index: 101;
+            &:hover::before {
+              content: "\1F49C";
+            }
+          }
+
+          > p {
+            margin: 0;
+            font-weight: 300;
+            padding-top: 0.5em;
+          }
+
+          > span {
+            color: $darkgreen;
+            background-color: $lightgreen;
+            font-size: large;
+            position: absolute;
+            right: 1em;
+            top: 1em;
+            padding: 0.5em;
+            border-radius: 5px;
+          }
         }
       }
-    }
-      // > .heart_animated{
-      //   &:hover::before {
-      //     // background: linear-gradient($mauve, $rose);
-      //     // border-color: linear-gradient($mauve, $rose);
-      //     position: absolute;
-      //     left: 50%;
-      //     transform: translateX(-48%);
-      //     bottom: 3px;
-      //     font-size: 0;
-      //     background: linear-gradient(#FF79DA, #9356dc);
-      //     background: -webkit-linear-gradient(#FF79DA, #9356dc);
-      //     transition: all 0.4s ease-in-out;
-      //     -webkit-background-clip: text;
-      //     -webkit-text-fill-color: transparent
-      //   }
-      // }
-      > p {
-        margin: 0;
-        font-weight: 300;
-        padding-top: 0.5em;
-      }
 
-      > span {
-        color: $darkgreen;
-        background-color: $lightgreen;
-        font-size: large;
+      a::before {
+        content: "";
+        z-index: 100;
         position: absolute;
-        right: 1em;
-        top: 1em;
-        padding: 0.5em;
-        border-radius: 5px;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
       }
-    }
-
-    a::before {
-      content: "";
-      z-index: 100;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
     }
   }
 }
@@ -389,23 +377,6 @@ body {
 .footer {
   @include footerbloc();
 }
-
-// .__titre {
-//   margin: 2em;
-// }
-// ._content {
-//   > li {
-//     > a {
-//       text-decoration: none;
-//       color: $white;
-//        font-family: 'Roboto';
-// line-height: 25px;
-//     }
-//     > i {
-// padding-right: 10px;
-//     }
-//   }
-//   }
 
 // ANIMATION //
 
@@ -477,82 +448,11 @@ body {
 /***********************************/
 /***********************************/
 /************pages******************/
-@media only screen and (max-width: $QUERY_MOBILE_MAX) {
-  body {
-    & > header {
-    }
-    & > nav {
-    }
-    & > main {
-      & > section {
-      }
-      & > article {
-      }
-    }
-    & > footer {
-      & > ul {
-      }
-    }
-  }
-}
-@media only screen and (min-width: $QUERY_TAB_MIN) and (max-width: $QUERY_TAB_MAX) {
-  body {
-    & > header {
-    }
-    & > nav {
-    }
-    & > main {
-      & > section {
-      }
-      & > article {
-      }
-    }
-    & > footer {
-      & > ul {
-      }
-    }
-  }
-  // body>header{}
-  // body>main{}
-  // body>main>section{}
-  // body>main>article{}
-  // body>footer{}
-  // body>footer>ul{}
-}
-@media only screen and (min-width: $QUERY_DESKTOP_MIN) and (max-width: $QUERY_DESKTOP_MAX) {
-  body {
-    & > header {
-    }
-    & > nav {
-    }
-    & > main {
-      & > section {
-      }
-      & > article {
-      }
-    }
-    & > footer {
-      & > ul {
-      }
-    }
-  }
-  // body>header{}
-  // body>main{}
-  // body>main>section{}
-  // body>main>article{}
-  // body>footer{}
-  // body>footer>ul{}
-}
-//ACCUEIL
 
 @mixin btnRetour {
   position: absolute;
   left: 1em;
-  top: 0;
-  height: 20%;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
+  top: 1.3em;
   color: black;
   font-size: 1.5em;
 }
@@ -600,16 +500,15 @@ body {
   position: relative;
 
   &__titre {
-    text-align: center;
     font-family: "Shrikhand";
     display: flex;
     justify-content: space-between;
     padding: 1em;
     padding-left: 1.5em;
-    >i{
-        &:hover::before {
-          content: "\1F49C";
-        }
+    > i {
+      &:hover::before {
+        content: "\1F49C";
+      }
     }
   }
 
@@ -664,10 +563,10 @@ body {
           background-color: $white;
         }
 
-         > h3 {
-           position: relative;
-           margin-top: 1rem;
-         }
+        > h3 {
+          position: relative;
+          margin-top: 1rem;
+        }
 
         div {
           // display: flex;
@@ -681,14 +580,14 @@ body {
             // border-radius: 0 25px 25px 0;
             // width: 100%;
 
-             position: absolute;
-             display: flex;
-             align-items: flex-end;
-             top: 0;
-             left: 0;
-             width: 100%;
-             height: 100%;
-             border-radius: 30px;
+            position: absolute;
+            display: flex;
+            align-items: flex-end;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
             //  padding-left: 2em;
 
             // > h3 {
@@ -708,12 +607,12 @@ body {
               // text-overflow: ellipsis;
               // white-space: nowrap;
 
-               width: 100%;
-               padding-left: 2em;
-               white-space: nowrap;
+              width: 100%;
+              padding-left: 2em;
+              white-space: nowrap;
               //  overflow: hidden;
-               text-overflow: ellipsis;
-               margin-bottom: 0.5em;
+              text-overflow: ellipsis;
+              margin-bottom: 0.5em;
             }
 
             // > span {
@@ -724,21 +623,21 @@ body {
           // \f058
 
           &.box::before {
-              content: "✓";
-              position: absolute;
-              right: -2em;
-              top: 30%;
-              width: 35px;
-              height: 35px;
-              text-align: center;
-              font-size: 2em;
-              color: $turquoise;
-              transition: transform 0.4s ease 0s, right 0.4s ease 0s;
-              border-width: initial;
-              border-style: solid;
-              border-color: $turquoise;
-              border-image: initial;
-              border-radius: 2em;
+            content: "✓";
+            position: absolute;
+            right: -2em;
+            top: 30%;
+            width: 35px;
+            height: 35px;
+            text-align: center;
+            font-size: 2em;
+            color: $turquoise;
+            transition: transform 0.4s ease 0s, right 0.4s ease 0s;
+            border-width: initial;
+            border-style: solid;
+            border-color: $turquoise;
+            border-image: initial;
+            border-radius: 2em;
           }
 
           &.box::after {
@@ -749,12 +648,10 @@ body {
             transition: width 0.4s;
             background: $turquoise;
             border-radius: 0 30px 30px 0;
-            position: relative ;
+            position: relative;
           }
 
-
           > .price {
-        
             right: 20px;
             bottom: 0px;
             display: inline-block;
@@ -762,7 +659,6 @@ body {
             transition: 400ms;
             padding-right: 1rem;
             // padding-right: 2em;
-
           }
 
           // > .hover {
@@ -791,29 +687,28 @@ body {
         }
       }
 
-       li:hover .box::after {
-         width: 200px;
-       }
-       li:hover .box::before {
-         transform: rotate(360deg);
-         right: 4rem;
-
-       }
+      li:hover .box::after {
+        width: 200px;
+      }
+      li:hover .box::before {
+        transform: rotate(360deg);
+        right: 4rem;
+      }
     }
   }
 
-   .laCarte__plats li {
-     overflow: hidden;
-   }
+  .laCarte__plats li {
+    overflow: hidden;
+  }
 }
 
-.laCarte__plats>ul>li:hover>div:before{
+.laCarte__plats > ul > li:hover > div:before {
   background: white;
   right: 3%;
   z-index: 1;
 }
 
-.laCarte__plats>ul>li:hover>div:after{
+.laCarte__plats > ul > li:hover > div:after {
   background: $turquoise;
   width: 150px;
 }
@@ -837,15 +732,210 @@ body {
   }
 }
 
-@keyframes animationMenu{
-  0% {height: 0;}
-  90% {}
-  100% {height: 400px;}
+@keyframes animationMenu {
+  0% {
+    height: 0;
+  }
+  90% {
+  }
+  100% {
+    height: 400px;
+  }
 }
 
 //MENU-2
 //MENU-3
 //MENU-4
+
+// MEDIA QUERIES ACCUEIL //
+
+@media only screen and (max-width: $QUERY_MOBILE_MAX) {
+  body {
+    & > header {
+    }
+    & > nav {
+    }
+    & > main {
+      & > section {
+      }
+      & > article {
+      }
+    }
+    & > footer {
+      & > ul {
+      }
+    }
+  }
+}
+@media only screen and (min-width: $QUERY_TAB_MIN) and (max-width: $QUERY_TAB_MAX) {
+  body {
+    .fonctionnement {
+      &__titre {
+        text-align: center;
+      }
+
+      &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        > li {
+          padding: 1em;
+          font-size: small;
+
+          ::before {
+            width: 1em;
+            height: 1em;
+            top: 0.5em;
+            line-height: 1rem;
+          }
+        }
+      }
+    }
+
+    .restaurants {
+      &__titre {
+        text-align: center;
+        margin: 1em;
+      }
+
+      &__content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        > a {
+          margin: 10px;
+        }
+      }
+    }
+    .footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &__content {
+        display: flex;
+        padding-left: 1em;
+
+        > li {
+          margin: 1rem;
+          font-size: small;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: $QUERY_DESKTOP_MIN) and (max-width: $QUERY_DESKTOP_MAX) {
+  body {
+    .fonctionnement {
+      &__titre {
+        text-align: center;
+      }
+
+      &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .restaurants {
+      &__titre {
+        text-align: center;
+        margin: 1em;
+      }
+
+      &__content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        > a {
+          margin: 10px;
+        }
+      }
+    }
+    .footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &__content {
+        display: flex;
+
+        > li {
+          margin: 1rem 2.5rem;
+        }
+      }
+    }
+  }
+}
+// ACCUEIL //
+
+// MEDIA QUERIES MENUS //
+
+@media only screen and (max-width: $QUERY_MOBILE_MAX) {
+  body {
+    & > header {
+    }
+    & > nav {
+    }
+    & > main {
+      & > section {
+      }
+      & > article {
+      }
+    }
+    & > footer {
+      & > ul {
+      }
+    }
+  }
+}
+@media only screen and (min-width: $QUERY_TAB_MIN) and (max-width: $QUERY_TAB_MAX) {
+  body {
+    & > header {
+    }
+    & > nav {
+    }
+    & > main {
+      & > section {
+      }
+      & > article {
+      }
+    }
+    .footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &__content {
+        display: flex;
+        padding-left: 1em;
+
+        > li {
+          margin: 1rem;
+          font-size: small;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: $QUERY_DESKTOP_MIN) and (max-width: $QUERY_DESKTOP_MAX) {
+  body {
+  //   .laCarte {
+  //     display: grid;
+  //     grid-template-columns: repeat(3, 1fr);
+  //     padding-top: 5em;
+
+  //     >h1{
+  //       position: absolute;
+  //       width: 30%;
+  //       padding: 0px;
+  //       padding-left: 15em;
+  //     }
+  //   }
+    
+  //   .order{
+  //     text-align: center;
+  //   }
+ }
+}
 
 /***********************************/
 /***********************************/
