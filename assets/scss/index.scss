@@ -1,18 +1,9 @@
-// @import "./vendors/bootstrap/scss/bootstrap.scss";
 
-/*
-     DD SOME TRAITMENTS HERE WITH nodejs's package for instance
-     THIS FILE WOULD BE IMPORTED FROM style.scss TO build/style.css
-*/
-
-// @import './node_modules/bootstrap/scss/bootstrap.scss';
-// C:\Users\achic\myDesktop\RUBY\ocr_p7_bis\node_modules\bootstrap\scss\bootstrap.scss
 @import "./main.scss";
 /***********************************/
 /***********************************/
 /************utils******************/
-//EXTENSIONS
-//FONCTIONS
+
 //MIXINS
 
 @mixin button_form {
@@ -54,12 +45,13 @@ $QUERY_DESKTOP_MAX: 1499px;
 /***********************************/
 /***********************************/
 /************base*******************/
+
 //BASE
+
 //NORMALIZE
+
 //TYPOGRAPHY
 
-// // @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
-// @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,500&display=swap');
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap");
 :root {
@@ -74,6 +66,7 @@ footer {
 /***********************************/
 /***********************************/
 /************component**************/
+
 //BUTTONS
 /***********************************/
 /***********************************/
@@ -81,20 +74,6 @@ footer {
 //HEADER
 body {
   font-weight: 500;
-  & > header {
-    /*display: flex;
-    justify-content: center;
-    padding: 1rem;
-    box-shadow: 0 0 10px 1px $darkergrey;
-
-    &.H > img.H__logo {
-      width: 50%;
-    }
-    &.H > button.H__goBack {
-      & > i {
-      }
-    }*/
-  }
 }
 $ok: 1em;
 
@@ -223,7 +202,7 @@ body {
     }
   }
 
-  &.--accueil {
+  &--accueil {
     > li {
       &::before {
         background-color: #9356dc;
