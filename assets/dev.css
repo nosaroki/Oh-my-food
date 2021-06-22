@@ -499,14 +499,14 @@ body {
 }
 .restaurants__content > a > figure > figcaption .far {
   position: absolute;
-  padding-left: 17em;
+  right: 1em;
   bottom: 1em;
   font-size: x-large;
   opacity: 1;
 }
 .restaurants__content > a > figure > figcaption .fas {
   position: absolute;
-  padding-left: 17em;
+  right: 1em;
   font-size: x-large;
   bottom: 1em;
   transform: scale(0);
@@ -669,14 +669,16 @@ body {
 }
 .laCarte__titre .far {
   position: absolute;
-  padding-left: 10em;
+  right: 1em;
+  font-size: x-large;
   opacity: 1;
 }
 .laCarte__titre .fas {
   position: absolute;
-  padding-left: 10em;
+  right: 1em;
+  font-size: x-large;
   transform: scale(0);
-  background: linear-gradient(to bottom, #9356dc #ff79da);
+  background: linear-gradient(to bottom, #9356dc, #ff79da);
 }
 .laCarte__titre:hover .far {
   opacity: 0;
@@ -823,7 +825,7 @@ body {
 }
 .laCarte__plats > ul li:hover .box::before {
   transform: rotate(360deg);
-  right: 4rem;
+  right: 2.5rem;
 }
 .laCarte .laCarte__plats li {
   overflow: hidden;

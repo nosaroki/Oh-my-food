@@ -187,7 +187,6 @@ $QUERY_TAB_MAX: 999px;
 $QUERY_DESKTOP_MIN: 1000px;
 $QUERY_DESKTOP_MAX: 1500px;
 
-
 //TYPOGRAPHY
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap");
@@ -200,9 +199,7 @@ footer {
   font-family: Shrikhand;
 }
 
-
 //BUTTONS
-
 
 /***********************************/
 /***********************************/
@@ -272,14 +269,14 @@ $ok: 1em;
 
           .far {
             position: absolute;
-            padding-left: 17em;
+            right: 1em;
             bottom: 1em;
             font-size: x-large;
             opacity: 1;
           }
           .fas {
             position: absolute;
-            padding-left: 17em;
+            right: 1em;
             font-size: x-large;
             bottom: 1em;
             transform: scale(0);
@@ -403,7 +400,6 @@ $ok: 1em;
   }
 }
 
-
 //MENUS
 
 .headerbarre {
@@ -442,14 +438,16 @@ $ok: 1em;
 
     .far {
       position: absolute;
-      padding-left: 10em;
+      right: 1em;
+      font-size: x-large;
       opacity: 1;
     }
     .fas {
       position: absolute;
-      padding-left: 10em;
+      right: 1em;
+      font-size: x-large;
       transform: scale(0);
-      background: linear-gradient(to bottom, $couleur-primaire $couleur-secondaire);
+      background: linear-gradient(to bottom, $couleur-primaire, $couleur-secondaire);
     }
     &:hover {
       .far {
@@ -572,7 +570,7 @@ $ok: 1em;
 
       li:hover .box::before {
         transform: rotate(360deg);
-        right: 4rem;
+        right: 2.5rem;
       }
     }
   }
