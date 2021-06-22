@@ -1,9 +1,4 @@
 @charset "UTF-8";
-/*
-     DD SOME TRAITMENTS HERE WITH nodejs's package for instance
-     THIS FILE WOULD BE IMPORTED FROM style.scss TO build/style.css
-*/
-/**/
 /**/
 /**/
 /**/
@@ -364,20 +359,9 @@ a {
 
 /**/
 /**/
-/**/
 /* ooo */
 /**/
 /**/
-/**/
-/**/
-/**/
-/***********************************/
-/***********************************/
-/************utils******************/
-/***********************************/
-/***********************************/
-/***********************************/
-/************base*******************/
 :root {
   font-family: Roboto;
 }
@@ -388,26 +372,11 @@ footer {
 
 /***********************************/
 /***********************************/
-/************component**************/
-/***********************************/
-/***********************************/
 /************layouts****************/
 body {
   font-weight: 500;
-}
-body > header {
-  /*display: flex;
-  justify-content: center;
-  padding: 1rem;
-  box-shadow: 0 0 10px 1px $darkergrey;
-
-  &.H > img.H__logo {
-    width: 50%;
-  }
-  &.H > button.H__goBack {
-    & > i {
-    }
-  }*/
+  margin: auto;
+  max-width: 1500px;
 }
 
 .headerbarre {
@@ -452,42 +421,7 @@ body > header {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   background-blend-mode: lighten;
   background-color: #b389e7;
-}
-
-body > nav {
-  /*form {
-    text-align: center;
-    background-color: $darkgrey;
-    padding: 1em 0;
-    > * {
-    }
-    > i {
-    }
-
-    > input {
-      font-weight: bolder;
-      background-color: transparent;
-      border: none;
-      text-align: center;
-    }
-  }
-  .menu {
-    text-align: center;
-    padding: 3em 1em;
-    background-color: $lightgrey;
-
-    > h1.menu__slogan {
-    }
-    > h2.menu__slogan {
-      font-weight: unset;
-    }
-
-    button.explore {
-      @include button_form()
-
-    }
-
-  }*/
+  transition: all 0.5s ease-out;
 }
 
 .fonctionnement {
@@ -563,16 +497,30 @@ body > nav {
   padding: 1em;
   font-weight: bold;
 }
-.restaurants__content > a > figure > figcaption > i {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-start;
-  position: relative;
+.restaurants__content > a > figure > figcaption .far {
+  position: absolute;
+  padding-left: 17em;
   bottom: 1em;
-  z-index: 101;
+  font-size: x-large;
+  opacity: 1;
 }
-.restaurants__content > a > figure > figcaption > i:hover::before {
-  content: "💜";
+.restaurants__content > a > figure > figcaption .fas {
+  position: absolute;
+  padding-left: 17em;
+  font-size: x-large;
+  bottom: 1em;
+  transform: scale(0);
+  background: linear-gradient(to bottom, #9356dc, #ff79da);
+}
+.restaurants__content > a > figure > figcaption:hover .far {
+  opacity: 0;
+}
+.restaurants__content > a > figure > figcaption:hover .fas {
+  transform: scale(1);
+  transition: transform 500ms ease-in-out;
+  transform-origin: bottom center;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 .restaurants__content > a > figure > figcaption > p {
   margin: 0;
@@ -680,9 +628,6 @@ body > nav {
     -webkit-transform: rotate(360deg);
   }
 }
-/***********************************/
-/***********************************/
-/************pages******************/
 .headerbarre {
   display: flex;
   justify-content: center;
@@ -722,8 +667,26 @@ body > nav {
   padding: 1em;
   padding-left: 1.5em;
 }
-.laCarte__titre > i:hover::before {
-  content: "💜";
+.laCarte__titre .far {
+  position: absolute;
+  padding-left: 10em;
+  opacity: 1;
+}
+.laCarte__titre .fas {
+  position: absolute;
+  padding-left: 10em;
+  transform: scale(0);
+  background: linear-gradient(to bottom, #9356dc #ff79da);
+}
+.laCarte__titre:hover .far {
+  opacity: 0;
+}
+.laCarte__titre:hover .fas {
+  transform: scale(1);
+  transition: transform 500ms ease-in-out;
+  transform-origin: bottom center;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 .laCarte__plats > h2 {
   padding-left: 2em;
@@ -788,6 +751,7 @@ body > nav {
   padding: 0;
   height: 70px;
   padding-left: 2em;
+  overflow: hidden;
 }
 .laCarte__plats > ul > li:hover {
   background-color: #fff;
@@ -811,6 +775,7 @@ body > nav {
 }
 .laCarte__plats > ul > li div.box > h4 {
   font-weight: 300;
+  overflow: hidden;
   width: 100%;
   padding-left: 2em;
   white-space: nowrap;
@@ -848,9 +813,10 @@ body > nav {
   right: 20px;
   bottom: 0px;
   display: inline-block;
-  height: 40px;
+  height: 25px;
   transition: 400ms;
   padding-right: 1rem;
+  background: transparent;
 }
 .laCarte__plats > ul li:hover .box::after {
   width: 200px;
@@ -895,6 +861,7 @@ body > nav {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   background-blend-mode: lighten;
   background-color: #b389e7;
+  transition: all 0.5s ease-out;
 }
 
 .footer {
@@ -941,7 +908,7 @@ body > nav {
     padding: 1em;
     font-size: small;
   }
-  body .fonctionnement__list > li ::before {
+  body .fonctionnement__list > li::before {
     width: 1em;
     height: 1em;
     top: 0.5em;
@@ -958,6 +925,14 @@ body > nav {
   body .restaurants__content > a {
     margin: 10px;
   }
+  body .restaurants__content > a > figure > figcaption .far {
+    right: 1em;
+    padding-left: 0;
+  }
+  body .restaurants__content > a > figure > figcaption .fas {
+    right: 1em;
+    padding-left: 0;
+  }
   body .footer {
     display: flex;
     justify-content: center;
@@ -972,7 +947,7 @@ body > nav {
     font-size: small;
   }
 }
-@media only screen and (min-width: 1000px) and (max-width: 1499px) {
+@media only screen and (min-width: 1000px) and (max-width: 1500px) {
   body .fonctionnement__titre {
     text-align: center;
   }
@@ -991,6 +966,14 @@ body > nav {
   body .restaurants__content > a {
     margin: 10px;
   }
+  body .restaurants__content > a > figure > figcaption .far {
+    right: 1em;
+    padding-left: 0;
+  }
+  body .restaurants__content > a > figure > figcaption .fas {
+    right: 1em;
+    padding-left: 0;
+  }
   body .footer {
     display: flex;
     justify-content: center;
@@ -1003,7 +986,40 @@ body > nav {
     margin: 1rem 2.5rem;
   }
 }
+@media only screen and (max-width: 499px) {
+  body .headerbarre__logo {
+    height: 70%;
+    margin: 0.5em;
+  }
+  body .laCarte__plats > ul > li > h3 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 75%;
+    white-space: nowrap;
+  }
+  body .laCarte__plats > ul li:hover .box::before {
+    transform: rotate(360deg);
+    right: 2rem;
+  }
+}
 @media only screen and (min-width: 501px) and (max-width: 999px) {
+  body .laCarte__titre {
+    padding-left: 2em;
+    justify-content: center;
+  }
+  body .laCarte__titre > a > figure > figcaption .far {
+    right: 1em;
+    padding-left: 0;
+  }
+  body .laCarte__titre > a > figure > figcaption .fas {
+    right: 1em;
+    padding-left: 0;
+  }
+  body .laCarte__plats > ul > li {
+    width: 75%;
+    justify-content: center;
+    margin-left: 4em;
+  }
   body .footer {
     display: flex;
     justify-content: center;
@@ -1018,11 +1034,27 @@ body > nav {
     font-size: small;
   }
 }
-/***********************************/
-/***********************************/
-/************themes*****************/
-/***********************************/
-/***********************************/
-/************vendors****************/
+@media only screen and (min-width: 1000px) and (max-width: 1500px) {
+  body .laCarte {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 5em;
+  }
+  body .laCarte > h1 {
+    position: absolute;
+    width: 30%;
+    padding: 0px;
+    padding-left: 15em;
+  }
+  body .laCarte__plats > ul > li {
+    width: 75%;
+    justify-content: center;
+    margin-left: 2em;
+  }
+  body .order {
+    text-align: center;
+    grid-template-columns: inherit;
+  }
+}
 
 /*# sourceMappingURL=dev.css.map */

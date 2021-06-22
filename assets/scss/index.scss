@@ -1,8 +1,4 @@
-
 @import "./main.scss";
-/***********************************/
-/***********************************/
-/************utils******************/
 
 //MIXINS
 
@@ -10,7 +6,7 @@
   border: none;
   border-radius: 30px;
   border-color: $white;
-  background: linear-gradient($rose, $mauve);
+  background: linear-gradient($couleur-secondaire, $couleur-primaire);
   color: white;
   height: 3em;
   width: 13em;
@@ -20,76 +16,15 @@
     box-shadow: 0 0 10px 0 rgb(0 0 0 / 30%);
     background-blend-mode: lighten;
     background-color: #b389e7;
+    transition: all 0.5s ease-out;
   }
 }
-
-//VARIABLES
-$mauve: #9356dc;
-$rose: #ff79da;
-$turquoise: #99e2d0;
-$white: #fff;
-$black: #000;
-$verydarkergrey: rgb(63, 63, 63);
-$approxdarkergrey: rgb(121, 120, 120);
-$darkergrey: rgb(192, 192, 192);
-$darkgrey: #4a4a4a1f;
-$lightgrey: #f5f5f5;
-$lightgreen: rgb(142, 225, 207);
-$darkgreen: rgb(51, 162, 138);
-$QUERY_MOBILE_MAX: 499px;
-$QUERY_TAB_MIN: 501px;
-$QUERY_TAB_MAX: 999px;
-$QUERY_DESKTOP_MIN: 1000px;
-$QUERY_DESKTOP_MAX: 1499px;
-/***********************************/
-/***********************************/
-/***********************************/
-/************base*******************/
-
-//BASE
-
-//NORMALIZE
-
-//TYPOGRAPHY
-
-
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap");
-:root {
-  font-family: Roboto;
-}
-
-@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-footer {
-  font-family: Shrikhand;
-}
-
-/***********************************/
-/***********************************/
-/************component**************/
-
-//BUTTONS
-/***********************************/
-/***********************************/
-/************layouts****************/
-//HEADER
-body {
-  font-weight: 500;
-}
-$ok: 1em;
 
 @mixin headerbarre($param: $ok) {
   padding: $param;
   box-shadow: 0 0 10px 1px $darkergrey;
   height: 50px;
 }
-
-.headerbarre {
-  display: flex;
-  justify-content: center;
-  @include headerbarre(1rem);
-}
-
-//NAV
 
 @mixin jumbotron__map() {
   text-align: center;
@@ -130,53 +65,6 @@ $ok: 1em;
   // ON POURRAIT UTILISER DES CONDITIONS @IF/@ELSE ET DES BOUCLES @EACH
 }
 
-.jumbotron {
-  @include jumbotron;
-
-  // METTRE DES REGLES NON PROGRAMMABLES
-  // SOUVENT À L'AIDE DE %PLACEHOLDERS
-}
-
-body {
-  & > nav {
-    /*form {
-      text-align: center;
-      background-color: $darkgrey;
-      padding: 1em 0;
-      > * {
-      }
-      > i {
-      }
-
-      > input {
-        font-weight: bolder;
-        background-color: transparent;
-        border: none;
-        text-align: center;
-      }
-    }
-    .menu {
-      text-align: center;
-      padding: 3em 1em;
-      background-color: $lightgrey;
-
-      > h1.menu__slogan {
-      }
-      > h2.menu__slogan {
-        font-weight: unset;
-      }
-
-      button.explore {
-        @include button_form()
-
-      }
-      
-    }*/
-  }
-}
-
-//MAIN FONCTIONNEMENT//
-
 @mixin fonctionnement__list {
   > li {
     list-style: none;
@@ -187,7 +75,7 @@ body {
     box-shadow: 1px 2px 5px lightgrey;
 
     &:hover {
-      background-color: lighten($mauve, 35);
+      background-color: lighten($couleur-primaire, 35);
     }
 
     > i {
@@ -197,15 +85,15 @@ body {
     }
     &:hover {
       i::before {
-        color: $mauve;
+        color: $couleur-primaire;
       }
     }
   }
 
-  &--accueil {
+  &.--accueil {
     > li {
       &::before {
-        background-color: #9356dc;
+        background-color: $couleur-primaire;
         width: 2em;
         height: 2em;
         padding: 5px;
@@ -227,17 +115,123 @@ body {
   }
 }
 
-@mixin fonctionnement__titre {
-}
-
 @mixin fonctionnement {
-  &__titre {
-    @include fonctionnement__titre();
-  }
   &__list {
     @include fonctionnement__list();
   }
 }
+
+@mixin footerbloc {
+  background: $verydarkergrey;
+  color: $white;
+  padding: 8px 0px 20px 10px;
+
+  &__titre {
+    margin: 2em;
+  }
+
+  &__content {
+    > li {
+      > a {
+        text-decoration: none;
+        color: $white;
+        font-family: "Roboto";
+        line-height: 25px;
+
+        > .fa-utensils {
+          padding-right: 1em;
+        }
+
+        > .fa-hands-helping {
+          padding-right: 0.5em;
+        }
+      }
+    }
+  }
+}
+
+@mixin btnRetour {
+  position: absolute;
+  left: 1em;
+  top: 1.3em;
+  color: black;
+  font-size: 1.5em;
+}
+
+@mixin laCarte {
+  &__titre {
+    @include laCarte__titre();
+  }
+
+  &__plats {
+    @include laCarte__plats();
+  }
+}
+
+//VARIABLES
+$couleur-primaire: #9356dc;
+$couleur-secondaire: #ff79da;
+$couleur-tertiaire: #99e2d0;
+$white: #fff;
+$black: #000;
+$verydarkergrey: rgb(63, 63, 63);
+$approxdarkergrey: rgb(121, 120, 120);
+$darkergrey: rgb(192, 192, 192);
+$darkgrey: #4a4a4a1f;
+$lightgrey: #f5f5f5;
+$lightgreen: rgb(142, 225, 207);
+$darkgreen: rgb(51, 162, 138);
+$QUERY_MOBILE_MAX: 499px;
+$QUERY_TAB_MIN: 501px;
+$QUERY_TAB_MAX: 999px;
+$QUERY_DESKTOP_MIN: 1000px;
+$QUERY_DESKTOP_MAX: 1500px;
+
+
+//TYPOGRAPHY
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap");
+:root {
+  font-family: Roboto;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+footer {
+  font-family: Shrikhand;
+}
+
+
+//BUTTONS
+
+
+/***********************************/
+/***********************************/
+/************layouts****************/
+
+//HEADER
+body {
+  font-weight: 500;
+  margin: auto;
+  max-width: 1500px;
+}
+$ok: 1em;
+
+.headerbarre {
+  display: flex;
+  justify-content: center;
+  @include headerbarre(1rem);
+}
+
+//NAV
+
+.jumbotron {
+  @include jumbotron;
+
+  // METTRE DES REGLES NON PROGRAMMABLES
+  // SOUVENT À L'AIDE DE %PLACEHOLDERS
+}
+
+//MAIN FONCTIONNEMENT//
 
 .fonctionnement {
   @include fonctionnement();
@@ -276,15 +270,31 @@ body {
           padding: 1em;
           font-weight: bold;
 
-          > i {
-            display: flex;
-            flex-direction: row-reverse;
-            justify-content: flex-start;
-            position: relative;
+          .far {
+            position: absolute;
+            padding-left: 17em;
             bottom: 1em;
-            z-index: 101;
-            &:hover::before {
-              content: "\1F49C";
+            font-size: x-large;
+            opacity: 1;
+          }
+          .fas {
+            position: absolute;
+            padding-left: 17em;
+            font-size: x-large;
+            bottom: 1em;
+            transform: scale(0);
+            background: linear-gradient(to bottom, $couleur-primaire, $couleur-secondaire);
+          }
+          &:hover {
+            .far {
+              opacity: 0;
+            }
+            .fas {
+              transform: scale(1);
+              transition: transform 500ms ease-in-out;
+              transform-origin: bottom center;
+              -webkit-background-clip: text;
+              color: transparent;
             }
           }
 
@@ -320,38 +330,7 @@ body {
   }
 }
 
-//MAIN RESTAURANTS//
-
 //FOOTER//
-
-@mixin footerbloc {
-  background: $verydarkergrey;
-  color: $white;
-  padding: 8px 0px 20px 10px;
-
-  &__titre {
-    margin: 2em;
-  }
-
-  &__content {
-    > li {
-      > a {
-        text-decoration: none;
-        color: $white;
-        font-family: "Roboto";
-        line-height: 25px;
-
-        > .fa-utensils {
-          padding-right: 1em;
-        }
-
-        > .fa-hands-helping {
-          padding-right: 0.5em;
-        }
-      }
-    }
-  }
-}
 
 .footer {
   @include footerbloc();
@@ -424,32 +403,8 @@ body {
   }
 }
 
-/***********************************/
-/***********************************/
-/************pages******************/
 
-@mixin btnRetour {
-  position: absolute;
-  left: 1em;
-  top: 1.3em;
-  color: black;
-  font-size: 1.5em;
-}
-
-@mixin laCarte__plats {
-}
-
-@mixin laCarte {
-  &__titre {
-    @include laCarte__titre();
-  }
-
-  &__plats {
-    @include laCarte__plats();
-  }
-}
-
-//MENU - 1 - LA PALETTE DU GOUT
+//MENUS
 
 .headerbarre {
   display: flex;
@@ -484,33 +439,31 @@ body {
     justify-content: space-between;
     padding: 1em;
     padding-left: 1.5em;
-    > i {
-      &:hover::before {
-        content: "\1F49C";
+
+    .far {
+      position: absolute;
+      padding-left: 10em;
+      opacity: 1;
+    }
+    .fas {
+      position: absolute;
+      padding-left: 10em;
+      transform: scale(0);
+      background: linear-gradient(to bottom, $couleur-primaire $couleur-secondaire);
+    }
+    &:hover {
+      .far {
+        opacity: 0;
+      }
+      .fas {
+        transform: scale(1);
+        transition: transform 500ms ease-in-out;
+        transform-origin: bottom center;
+        -webkit-background-clip: text;
+        color: transparent;
       }
     }
   }
-
-  // #heart {
-  //   > .heart_still {
-  //     ::before {
-  //     }
-  //     > .heart_animated {
-  //       ::before {
-  //         position: absolute;
-  //         left: 50%;
-  //         transform: translateX(-48%);
-  //         bottom: 3px;
-  //         font-size: 0;
-  //         background: linear-gradient(#ff79da, #9356dc);
-  //         background: -webkit-linear-gradient(#ff79da, #9356dc);
-  //         transition: all 0.4s ease-in-out;
-  //         -webkit-background-clip: text;
-  //         -webkit-text-fill-color: transparent;
-  //       }
-  //     }
-  //   }
-  // }
 
   &__plats {
     > h2 {
@@ -518,7 +471,7 @@ body {
       position: relative;
 
       &::after {
-        background-color: $turquoise;
+        background-color: $couleur-tertiaire;
         content: "";
         height: 3px;
         width: 3em;
@@ -537,6 +490,7 @@ body {
         padding: 0;
         height: 70px;
         padding-left: 2em;
+        overflow: hidden;
 
         &:hover {
           background-color: $white;
@@ -548,17 +502,9 @@ body {
         }
 
         div {
-          // display: flex;
-          // flex-direction: column;
           overflow: hidden;
 
           &.box {
-            // height: 6em;
-            // top: 0;
-            // right: 0;
-            // border-radius: 0 25px 25px 0;
-            // width: 100%;
-
             position: absolute;
             display: flex;
             align-items: flex-end;
@@ -567,39 +513,17 @@ body {
             width: 100%;
             height: 100%;
             border-radius: 30px;
-            //  padding-left: 2em;
-
-            // > h3 {
-            //   position: relative;
-            //   padding: 1em 0 0.2em 0.8em;
-            //   margin: 0;
-            //   overflow: hidden;
-            //   text-overflow: ellipsis;
-            //   white-space: nowrap;
-            // }
 
             > h4 {
               font-weight: 300;
-              // padding: 0 1em;
-              // margin: 0;
-              // overflow: hidden;
-              // text-overflow: ellipsis;
-              // white-space: nowrap;
-
+              overflow: hidden;
               width: 100%;
               padding-left: 2em;
               white-space: nowrap;
-              //  overflow: hidden;
               text-overflow: ellipsis;
               margin-bottom: 0.5em;
             }
-
-            // > span {
-            //   margin: 1em 2em;
-            // }
           }
-
-          // \f058
 
           &.box::before {
             content: "✓";
@@ -610,11 +534,11 @@ body {
             height: 35px;
             text-align: center;
             font-size: 2em;
-            color: $turquoise;
+            color: $couleur-tertiaire;
             transition: transform 0.4s ease 0s, right 0.4s ease 0s;
             border-width: initial;
             border-style: solid;
-            border-color: $turquoise;
+            border-color: $couleur-tertiaire;
             border-image: initial;
             border-radius: 2em;
           }
@@ -625,7 +549,7 @@ body {
             height: 100%;
             right: 0;
             transition: width 0.4s;
-            background: $turquoise;
+            background: $couleur-tertiaire;
             border-radius: 0 30px 30px 0;
             position: relative;
           }
@@ -634,41 +558,18 @@ body {
             right: 20px;
             bottom: 0px;
             display: inline-block;
-            height: 40px;
+            height: 25px;
             transition: 400ms;
             padding-right: 1rem;
-            // padding-right: 2em;
+            background: transparent;
           }
-
-          // > .hover {
-          //   display: block;
-          //   font-size: 1em;
-          //   color: white;
-          //   text-align: center;
-          //   height: 40px;
-          //   padding: 10px 0;
-          //   width: 55px;
-          //   line-height: 40px;
-          //   background-color: $turquoise;
-          //   border-radius: 0 15px 15px 0;
-          //   position: absolute;
-          //   right: 0;
-          //   top: 0;
-          //   transform: translateX(55px);
-          //   transition: 400ms;
-
-          //   i {
-          //     display: inline-block;
-          //     font-style: normal;
-          //     line-height: 1;
-          //   }
-          // }
         }
       }
 
       li:hover .box::after {
         width: 200px;
       }
+
       li:hover .box::before {
         transform: rotate(360deg);
         right: 4rem;
@@ -688,7 +589,7 @@ body {
 }
 
 .laCarte__plats > ul > li:hover > div:after {
-  background: $turquoise;
+  background: $couleur-tertiaire;
   width: 150px;
 }
 
@@ -722,30 +623,8 @@ body {
   }
 }
 
-//MENU-2
-//MENU-3
-//MENU-4
-
 // MEDIA QUERIES ACCUEIL //
 
-@media only screen and (max-width: $QUERY_MOBILE_MAX) {
-  body {
-    & > header {
-    }
-    & > nav {
-    }
-    & > main {
-      & > section {
-      }
-      & > article {
-      }
-    }
-    & > footer {
-      & > ul {
-      }
-    }
-  }
-}
 @media only screen and (min-width: $QUERY_TAB_MIN) and (max-width: $QUERY_TAB_MAX) {
   body {
     .fonctionnement {
@@ -761,7 +640,7 @@ body {
           padding: 1em;
           font-size: small;
 
-          ::before {
+          &::before {
             width: 1em;
             height: 1em;
             top: 0.5em;
@@ -782,6 +661,18 @@ body {
         grid-template-columns: repeat(2, 1fr);
         > a {
           margin: 10px;
+          > figure {
+            > figcaption {
+              .far {
+                right: 1em;
+                padding-left: 0;
+              }
+              .fas {
+                right: 1em;
+                padding-left: 0;
+              }
+            }
+          }
         }
       }
     }
@@ -826,6 +717,18 @@ body {
         grid-template-columns: repeat(4, 1fr);
         > a {
           margin: 10px;
+          > figure {
+            > figcaption {
+              .far {
+                right: 1em;
+                padding-left: 0;
+              }
+              .fas {
+                right: 1em;
+                padding-left: 0;
+              }
+            }
+          }
         }
       }
     }
@@ -850,32 +753,61 @@ body {
 
 @media only screen and (max-width: $QUERY_MOBILE_MAX) {
   body {
-    & > header {
-    }
-    & > nav {
-    }
-    & > main {
-      & > section {
-      }
-      & > article {
+    .headerbarre {
+      &__logo {
+        height: 70%;
+        margin: 0.5em;
       }
     }
-    & > footer {
-      & > ul {
+    .laCarte {
+      &__plats {
+        > ul {
+          > li {
+            > h3 {
+              text-overflow: ellipsis;
+              overflow: hidden;
+              width: 75%;
+              white-space: nowrap;
+            }
+          }
+          li:hover .box::before {
+            transform: rotate(360deg);
+            right: 2rem;
+          }
+        }
       }
     }
   }
 }
 @media only screen and (min-width: $QUERY_TAB_MIN) and (max-width: $QUERY_TAB_MAX) {
   body {
-    & > header {
-    }
-    & > nav {
-    }
-    & > main {
-      & > section {
+    .laCarte {
+      &__titre {
+        padding-left: 2em;
+        justify-content: center;
+        > a {
+          > figure {
+            > figcaption {
+              .far {
+                right: 1em;
+                padding-left: 0;
+              }
+              .fas {
+                right: 1em;
+                padding-left: 0;
+              }
+            }
+          }
+        }
       }
-      & > article {
+      &__plats {
+        > ul {
+          > li {
+            width: 75%;
+            justify-content: center;
+            margin-left: 4em;
+          }
+        }
       }
     }
     .footer {
@@ -897,29 +829,32 @@ body {
 }
 @media only screen and (min-width: $QUERY_DESKTOP_MIN) and (max-width: $QUERY_DESKTOP_MAX) {
   body {
-  //   .laCarte {
-  //     display: grid;
-  //     grid-template-columns: repeat(3, 1fr);
-  //     padding-top: 5em;
+    .laCarte {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding-top: 5em;
 
-  //     >h1{
-  //       position: absolute;
-  //       width: 30%;
-  //       padding: 0px;
-  //       padding-left: 15em;
-  //     }
-  //   }
-    
-  //   .order{
-  //     text-align: center;
-  //   }
- }
+      > h1 {
+        position: absolute;
+        width: 30%;
+        padding: 0px;
+        padding-left: 15em;
+      }
+
+      &__plats {
+        > ul {
+          > li {
+            width: 75%;
+            justify-content: center;
+            margin-left: 2em;
+          }
+        }
+      }
+    }
+
+    .order {
+      text-align: center;
+      grid-template-columns: inherit;
+    }
+  }
 }
-
-/***********************************/
-/***********************************/
-/************themes*****************/
-
-/***********************************/
-/***********************************/
-/************vendors****************/
