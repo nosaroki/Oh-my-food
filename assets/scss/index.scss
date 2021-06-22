@@ -90,7 +90,7 @@
     }
   }
 
-  &.--accueil {
+  &--accueil {
     > li {
       &::before {
         background-color: $couleur-primaire;
