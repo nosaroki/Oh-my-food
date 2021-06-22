@@ -446,7 +446,7 @@ body {
 .fonctionnement__list > li:hover i::before {
   color: #9356dc;
 }
-.fonctionnement__list.--accueil > li::before {
+.fonctionnement__list.-accueil > li::before {
   background-color: #9356dc;
   width: 2em;
   height: 2em;
@@ -459,13 +459,13 @@ body {
   text-align: center;
   line-height: 2rem;
 }
-.fonctionnement__list.--accueil > li:nth-child(1):before {
+.fonctionnement__list.-accueil > li:nth-child(1):before {
   content: "1";
 }
-.fonctionnement__list.--accueil > li:nth-child(2):before {
+.fonctionnement__list.-accueil > li:nth-child(2):before {
   content: "2";
 }
-.fonctionnement__list.--accueil > li:nth-child(3):before {
+.fonctionnement__list.-accueil > li:nth-child(3):before {
   content: "3";
 }
 
@@ -726,7 +726,7 @@ body {
 .laCarte__plats > ul > li:hover i::before {
   color: #9356dc;
 }
-.laCarte__plats > ul.--accueil > li::before {
+.laCarte__plats > ul.-accueil > li::before {
   background-color: #9356dc;
   width: 2em;
   height: 2em;
@@ -739,13 +739,13 @@ body {
   text-align: center;
   line-height: 2rem;
 }
-.laCarte__plats > ul.--accueil > li:nth-child(1):before {
+.laCarte__plats > ul.-accueil > li:nth-child(1):before {
   content: "1";
 }
-.laCarte__plats > ul.--accueil > li:nth-child(2):before {
+.laCarte__plats > ul.-accueil > li:nth-child(2):before {
   content: "2";
 }
-.laCarte__plats > ul.--accueil > li:nth-child(3):before {
+.laCarte__plats > ul.-accueil > li:nth-child(3):before {
   content: "3";
 }
 .laCarte__plats > ul > li {
