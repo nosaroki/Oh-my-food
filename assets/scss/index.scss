@@ -68,11 +68,13 @@
 @mixin fonctionnement__list {
   > li {
     list-style: none;
-    margin: 20px;
+    margin: 5px;
+    margin-bottom: 1.5em;
     position: relative;
-    padding: 2em;
-    border-radius: 30px;
-    box-shadow: 1px 2px 5px lightgrey;
+    padding: 1.5em;
+    border-radius: 15px;
+    box-shadow: 1px 1px 5px lightgrey;
+    background-color: $verylightgrey;
 
     &:hover {
       background-color: lighten($couleur-primaire, 35);
@@ -94,8 +96,8 @@
     > li {
       &::before {
         background-color: $couleur-primaire;
-        width: 2em;
-        height: 2em;
+        width: 1em;
+        height: 1em;
         padding: 5px;
         border-radius: 2em;
         position: absolute;
@@ -103,7 +105,8 @@
         top: 1.5em;
         color: white;
         text-align: center;
-        line-height: 2rem;
+        line-height: 1rem;
+        font-size: 15px;
       }
 
       @for $i from 1 through 3 {
@@ -127,7 +130,7 @@
   padding: 8px 0px 20px 10px;
 
   &__titre {
-    margin: 2em;
+    margin: 1em;
   }
 
   &__content {
@@ -179,13 +182,14 @@ $approxdarkergrey: rgb(121, 120, 120);
 $darkergrey: rgb(192, 192, 192);
 $darkgrey: #4a4a4a1f;
 $lightgrey: #f5f5f5;
+$verylightgrey: #f5f5f566;
 $lightgreen: rgb(142, 225, 207);
 $darkgreen: rgb(51, 162, 138);
 $QUERY_MOBILE_MAX: 499px;
 $QUERY_TAB_MIN: 501px;
 $QUERY_TAB_MAX: 999px;
 $QUERY_DESKTOP_MIN: 1000px;
-$QUERY_DESKTOP_MAX: 1500px;
+$QUERY_DESKTOP_MAX: 2500px;
 
 //TYPOGRAPHY
 
@@ -233,6 +237,9 @@ $ok: 1em;
 .fonctionnement {
   @include fonctionnement();
   margin: 2em;
+  &__titre{
+    margin-left: -1em;
+  }
 }
 
 //MAIN RESTAURANTS//
@@ -242,7 +249,7 @@ $ok: 1em;
   background-color: $lightgrey;
 
   &__titre {
-    margin: 2em;
+    margin-top: 2em;
   }
 
   &__content {
@@ -251,7 +258,7 @@ $ok: 1em;
 
       > figure {
         border-radius: 10px;
-        box-shadow: 0 0 10px -2px;
+        box-shadow: 0 0 4px -2px;
         width: 100%;
         height: 300px;
         margin: 1em 0;
@@ -280,7 +287,11 @@ $ok: 1em;
             font-size: x-large;
             bottom: 1em;
             transform: scale(0);
-            background: linear-gradient(to bottom, $couleur-primaire, $couleur-secondaire);
+            background: linear-gradient(
+              to bottom,
+              $couleur-primaire,
+              $couleur-secondaire
+            );
           }
           &:hover {
             .far {
@@ -434,7 +445,6 @@ $ok: 1em;
     display: flex;
     justify-content: space-between;
     padding: 1em;
-    padding-left: 1.5em;
 
     .far {
       position: absolute;
@@ -447,7 +457,11 @@ $ok: 1em;
       right: 1em;
       font-size: x-large;
       transform: scale(0);
-      background: linear-gradient(to bottom, $couleur-primaire, $couleur-secondaire);
+      background: linear-gradient(
+        to bottom,
+        $couleur-primaire,
+        $couleur-secondaire
+      );
     }
     &:hover {
       .far {
@@ -465,8 +479,9 @@ $ok: 1em;
 
   &__plats {
     > h2 {
-      padding-left: 2em;
+      padding-left: 1em;
       position: relative;
+      font-weight: 300;
 
       &::after {
         background-color: $couleur-tertiaire;
@@ -474,7 +489,7 @@ $ok: 1em;
         height: 3px;
         width: 3em;
         bottom: -0.2em;
-        left: 2em;
+        left: 1em;
         position: absolute;
       }
     }
@@ -487,16 +502,16 @@ $ok: 1em;
         background-color: $white;
         padding: 0;
         height: 70px;
-        padding-left: 2em;
-        overflow: hidden;
+        padding-left: 1em;
 
         &:hover {
           background-color: $white;
         }
 
         > h3 {
-          position: relative;
           margin-top: 1rem;
+          text-overflow: ellipsis;
+          overflow: hidden;
         }
 
         div {
@@ -510,13 +525,13 @@ $ok: 1em;
             left: 0;
             width: 100%;
             height: 100%;
-            border-radius: 30px;
+            border-radius: 15px;
 
             > h4 {
               font-weight: 300;
               overflow: hidden;
               width: 100%;
-              padding-left: 2em;
+              padding-left: 1em;
               white-space: nowrap;
               text-overflow: ellipsis;
               margin-bottom: 0.5em;
@@ -548,7 +563,7 @@ $ok: 1em;
             right: 0;
             transition: width 0.4s;
             background: $couleur-tertiaire;
-            border-radius: 0 30px 30px 0;
+            border-radius: 0 15px 15px 0;
             position: relative;
           }
 
@@ -579,6 +594,12 @@ $ok: 1em;
     overflow: hidden;
   }
 }
+.laCarte__plats > ul > li:hover h3 {
+  width: 65%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
 .laCarte__plats > ul > li:hover > div:before {
   background: white;
@@ -606,7 +627,7 @@ $ok: 1em;
   @include footerbloc();
 
   > ul {
-    padding-left: 2em;
+    padding-left: 1em;
   }
 }
 
@@ -637,16 +658,28 @@ $ok: 1em;
         > li {
           padding: 1em;
           font-size: small;
-
-          &::before {
-            width: 1em;
-            height: 1em;
-            top: 0.5em;
-            line-height: 1rem;
+          margin: 15px;
+          >i{
+            padding-left: 5px;
+            padding-right: 10px;
           }
         }
+        &.-accueil {
+          > li {
+            &::before {
+              width: 0.5em;
+              height: 0.5em;
+              top: 1em;
+              line-height: 0.4rem;
+              font-size: 10px;
+            }
+          }
+        }
+
       }
     }
+
+    
 
     .restaurants {
       &__titre {
@@ -701,6 +734,9 @@ $ok: 1em;
       &__list {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        > li{
+        margin: 25px;
+      }
       }
     }
 
@@ -836,7 +872,14 @@ $ok: 1em;
         position: absolute;
         width: 30%;
         padding: 0px;
-        padding-left: 15em;
+        padding-left: 20em;
+        .far {
+          right: 5em;
+        }
+        .fas {
+          right: 5em;
+        }
+
       }
 
       &__plats {
@@ -851,8 +894,11 @@ $ok: 1em;
     }
 
     .order {
-      text-align: center;
-      grid-template-columns: inherit;
+      &__commander{ 
+        position: relative;
+        left: 30em;
+      }
     }
   }
 }
+
