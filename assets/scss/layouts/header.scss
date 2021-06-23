@@ -1,1 +1,14 @@
-/**/
+//HEADER
+
+body {
+    font-weight: 500;
+    margin: auto;
+    max-width: 1500px;
+  }
+  $ok: 1em;
+  
+  .headerbarre {
+    display: flex;
+    justify-content: center;
+    @include headerbarre(1rem);
+  }

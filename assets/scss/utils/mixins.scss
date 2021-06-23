@@ -1,1 +1,152 @@
-/**/
+//MIXINS
+
+@mixin headerbarre($param: $ok) {
+    padding: $param;
+    box-shadow: 0 0 10px 1px $darkergrey;
+    height: 50px;
+  }
+  
+  @mixin jumbotron__map() {
+    text-align: center;
+    background-color: $darkgrey;
+    padding: 1em 0;
+  
+    > input {
+      font-weight: bolder;
+      background-color: transparent;
+      border: none;
+      text-align: center;
+    }
+  }
+  
+  @mixin jumbotron__menu {
+    text-align: center;
+    padding: 3em 1em;
+    background-color: $lightgrey;
+  
+    > h2.slogan {
+      font-weight: 100;
+    }
+  
+    button.explore {
+      @include button_form();
+    }
+  }
+  
+  @mixin jumbotron() {
+    &__map {
+      @include jumbotron__map;
+    }
+  
+    &__menu {
+      @include jumbotron__menu;
+    }
+  
+    // ON POURRAIT UTILISER DES CONDITIONS @IF/@ELSE ET DES BOUCLES @EACH
+  }
+  
+  @mixin fonctionnement__list {
+    > li {
+      list-style: none;
+      margin: 5px;
+      margin-bottom: 1.5em;
+      position: relative;
+      padding: 1.5em;
+      border-radius: 15px;
+      box-shadow: 1px 1px 5px lightgrey;
+      background-color: $verylightgrey;
+  
+      &:hover {
+        background-color: lighten($couleur-primaire, 35);
+      }
+  
+      > i {
+        color: $approxdarkergrey;
+        padding-left: 15px;
+        padding-right: 20px;
+      }
+      &:hover {
+        i::before {
+          color: $couleur-primaire;
+        }
+      }
+    }
+  
+    &.-accueil {
+      > li {
+        &::before {
+          background-color: $couleur-primaire;
+          width: 1em;
+          height: 1em;
+          padding: 5px;
+          border-radius: 2em;
+          position: absolute;
+          left: -10px;
+          top: 1.5em;
+          color: white;
+          text-align: center;
+          line-height: 1rem;
+          font-size: 15px;
+        }
+  
+        @for $i from 1 through 3 {
+          &:nth-child(#{$i}):before {
+            content: "#{$i}";
+          }
+        }
+      }
+    }
+  }
+  
+  @mixin fonctionnement {
+    &__list {
+      @include fonctionnement__list();
+    }
+  }
+  
+  @mixin footerbloc {
+    background: $verydarkergrey;
+    color: $white;
+    padding: 8px 0px 20px 10px;
+  
+    &__titre {
+      margin: 1em;
+    }
+  
+    &__content {
+      > li {
+        > a {
+          text-decoration: none;
+          color: $white;
+          font-family: "Roboto";
+          line-height: 25px;
+  
+          > .fa-utensils {
+            padding-right: 1em;
+          }
+  
+          > .fa-hands-helping {
+            padding-right: 0.5em;
+          }
+        }
+      }
+    }
+  }
+  
+  @mixin btnRetour {
+    position: absolute;
+    left: 1em;
+    top: 1.3em;
+    color: black;
+    font-size: 1.5em;
+  }
+  
+  @mixin laCarte {
+    &__titre {
+      @include laCarte__titre();
+    }
+  
+    &__plats {
+      @include laCarte__plats();
+    }
+  }

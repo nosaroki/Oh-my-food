@@ -1,0 +1,220 @@
+//MENUS
+
+.headerbarre {
+    display: flex;
+    justify-content: center;
+    @include headerbarre($ok);
+    &__btnRetour {
+      @include btnRetour();
+    }
+  }
+  
+  .bg {
+    margin: 0;
+  
+    &__img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+    }
+  }
+  
+  .laCarte {
+    background-color: $lightgrey;
+    border-radius: 2em 2em 0 0;
+    margin-top: -6em;
+    width: 100%;
+    padding-bottom: 1em;
+    position: relative;
+  
+    &__titre {
+      font-family: "Shrikhand";
+      display: flex;
+      justify-content: space-between;
+      padding: 1em;
+  
+      .far {
+        position: absolute;
+        right: 1em;
+        font-size: x-large;
+        opacity: 1;
+      }
+      .fas {
+        position: absolute;
+        right: 1em;
+        font-size: x-large;
+        transform: scale(0);
+        background: linear-gradient(
+          to bottom,
+          $couleur-primaire,
+          $couleur-secondaire
+        );
+      }
+      &:hover {
+        .far {
+          opacity: 0;
+        }
+        .fas {
+          transform: scale(1);
+          transition: transform 500ms ease-in-out;
+          transform-origin: bottom center;
+          -webkit-background-clip: text;
+          color: transparent;
+        }
+      }
+    }
+  
+    &__plats {
+      > h2 {
+        padding-left: 1em;
+        position: relative;
+        font-weight: 300;
+  
+        &::after {
+          background-color: $couleur-tertiaire;
+          content: "";
+          height: 3px;
+          width: 3em;
+          bottom: -0.2em;
+          left: 1em;
+          position: absolute;
+        }
+      }
+      > ul {
+        @include fonctionnement__list();
+        animation: animationMenu 1s ease-in 1;
+        overflow: hidden;
+        padding-left: 0.5em;
+  
+        > li {
+          background-color: $white;
+          padding: 0;
+          height: 70px;
+          padding-left: 1em;
+  
+          &:hover {
+            background-color: $white;
+          }
+  
+          > h3 {
+            margin-top: 1rem;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+  
+          div {
+            overflow: hidden;
+  
+            &.box {
+              position: absolute;
+              display: flex;
+              align-items: flex-end;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              border-radius: 15px;
+  
+              > h4 {
+                font-weight: 300;
+                overflow: hidden;
+                width: 100%;
+                padding-left: 1em;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                margin-bottom: 0.5em;
+              }
+            }
+  
+            &.box::before {
+              content: "✓";
+              position: absolute;
+              right: -2em;
+              top: 30%;
+              width: 35px;
+              height: 35px;
+              text-align: center;
+              font-size: 2em;
+              color: $couleur-tertiaire;
+              transition: transform 0.4s ease 0s, right 0.4s ease 0s;
+              border-width: initial;
+              border-style: solid;
+              border-color: $couleur-tertiaire;
+              border-image: initial;
+              border-radius: 2em;
+            }
+  
+            &.box::after {
+              content: "";
+              width: 0px;
+              height: 100%;
+              right: 0;
+              transition: width 0.4s;
+              background: $couleur-tertiaire;
+              border-radius: 0 15px 15px 0;
+              position: relative;
+            }
+  
+            > .price {
+              right: 20px;
+              bottom: 0px;
+              display: inline-block;
+              height: 25px;
+              transition: 400ms;
+              padding-right: 1rem;
+              background: transparent;
+            }
+          }
+        }
+  
+        li:hover .box::after {
+          width: 200px;
+        }
+  
+        li:hover .box::before {
+          transform: rotate(360deg);
+          right: 2.5rem;
+        }
+      }
+    }
+  
+    .laCarte__plats li {
+      overflow: hidden;
+    }
+  }
+  .laCarte__plats > ul > li:hover h3 {
+    width: 65%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .laCarte__plats > ul > li:hover > div:before {
+    background: white;
+    right: 3%;
+    z-index: 1;
+  }
+  
+  .laCarte__plats > ul > li:hover > div:after {
+    background: $couleur-tertiaire;
+    width: 150px;
+  }
+  
+  .order {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 3em;
+  
+    &__commander {
+      @include button_form();
+    }
+  }
+  
+  .footer {
+    @include footerbloc();
+  
+    > ul {
+      padding-left: 1em;
+    }
+  }

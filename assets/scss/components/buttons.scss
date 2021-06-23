@@ -1,1 +1,21 @@
-/**/
+// BUTTONS
+
+@mixin button_form {
+    border: none;
+    border-radius: 30px;
+    border-color: $white;
+    background: linear-gradient($couleur-secondaire, $couleur-primaire);
+    color: white;
+    height: 3em;
+    width: 13em;
+    box-shadow: 0 0 10px 1px $darkergrey;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0 0 10px 0 rgb(0 0 0 / 30%);
+      background-blend-mode: lighten;
+      background-color: #b389e7;
+      transition: all 0.5s ease-out;
+    }
+  }
+
+

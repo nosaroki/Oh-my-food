@@ -75,6 +75,7 @@
   
   a {
     background-color: transparent;
+    text-decoration: none;
   }
   
   /**
@@ -347,9 +348,3 @@
   [hidden] {
     display: none;
   }
-
-
-  /**
-  * TOUS LES ELEMENTS QUE JE NORMALISE A MA SAUCE   :)
-  */
-  ul{list-style:none;}

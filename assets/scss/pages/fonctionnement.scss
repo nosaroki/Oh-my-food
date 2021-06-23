@@ -1,0 +1,9 @@
+//MAIN FONCTIONNEMENT//
+
+.fonctionnement {
+    @include fonctionnement();
+    margin: 2em;
+    &__titre{
+      margin-left: -1em;
+    }
+  }

@@ -1,1 +1,8 @@
-/* ooo */
+// NAV
+
+.jumbotron {
+    @include jumbotron;
+  
+    // METTRE DES REGLES NON PROGRAMMABLES
+    // SOUVENT À L'AIDE DE %PLACEHOLDERS
+  }

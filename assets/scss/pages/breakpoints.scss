@@ -1,0 +1,257 @@
+// MEDIA QUERIES ACCUEIL //
+
+@media only screen and (min-width: $QUERY_TAB_MIN) and (max-width: $QUERY_TAB_MAX) {
+  body {
+    .fonctionnement {
+      &__titre {
+        text-align: center;
+      }
+
+      &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        > li {
+          padding: 1em;
+          font-size: small;
+          margin: 15px;
+          > i {
+            padding-left: 5px;
+            padding-right: 10px;
+          }
+        }
+        &.-accueil {
+          > li {
+            &::before {
+              width: 0.5em;
+              height: 0.5em;
+              top: 1em;
+              line-height: 0.4rem;
+              font-size: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    .restaurants {
+      &__titre {
+        text-align: center;
+        margin: 1em;
+      }
+
+      &__content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        > a {
+          margin: 10px;
+          > figure {
+            > figcaption {
+              .far {
+                right: 1em;
+                padding-left: 0;
+              }
+              .fas {
+                right: 1em;
+                padding-left: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    .footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &__content {
+        display: flex;
+        padding-left: 1em;
+
+        > li {
+          margin: 1rem;
+          font-size: small;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $QUERY_DESKTOP_MIN) and (max-width: $QUERY_DESKTOP_MAX) {
+  body {
+    .fonctionnement {
+      &__titre {
+        text-align: center;
+      }
+
+      &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        > li {
+          margin: 25px;
+        }
+      }
+    }
+
+    .restaurants {
+      &__titre {
+        text-align: center;
+        margin: 1em;
+      }
+
+      &__content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        > a {
+          margin: 10px;
+          > figure {
+            > figcaption {
+              .far {
+                right: 1em;
+                padding-left: 0;
+              }
+              .fas {
+                right: 1em;
+                padding-left: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    .footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &__content {
+        display: flex;
+
+        > li {
+          margin: 1rem 2.5rem;
+        }
+      }
+    }
+  }
+}
+
+// MEDIA QUERIES MENUS //
+
+@media only screen and (max-width: $QUERY_MOBILE_MAX) {
+  body {
+    .headerbarre {
+      &__logo {
+        height: 70%;
+        margin: 0.5em;
+      }
+    }
+    .laCarte {
+      &__plats {
+        > ul {
+          > li {
+            > h3 {
+              text-overflow: ellipsis;
+              overflow: hidden;
+              width: 75%;
+              white-space: nowrap;
+            }
+          }
+          li:hover .box::before {
+            transform: rotate(360deg);
+            right: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $QUERY_TAB_MIN) and (max-width: $QUERY_TAB_MAX) {
+  body {
+    .laCarte {
+      &__titre {
+        padding-left: 2em;
+        justify-content: center;
+        > a {
+          > figure {
+            > figcaption {
+              .far {
+                right: 1em;
+                padding-left: 0;
+              }
+              .fas {
+                right: 1em;
+                padding-left: 0;
+              }
+            }
+          }
+        }
+      }
+      &__plats {
+        > ul {
+          > li {
+            width: 75%;
+            justify-content: center;
+            margin-left: 4em;
+          }
+        }
+      }
+    }
+    .footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &__content {
+        display: flex;
+        padding-left: 1em;
+
+        > li {
+          margin: 1rem;
+          font-size: small;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $QUERY_DESKTOP_MIN) and (max-width: $QUERY_DESKTOP_MAX) {
+  body {
+    .laCarte {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding-top: 5em;
+
+      > h1 {
+        position: absolute;
+        width: 30%;
+        padding: 0px;
+        padding-left: 20em;
+        .far {
+          right: 5em;
+        }
+        .fas {
+          right: 5em;
+        }
+      }
+
+      &__plats {
+        > ul {
+          > li {
+            width: 75%;
+            justify-content: center;
+            margin-left: 2em;
+          }
+        }
+      }
+    }
+
+    .order {
+      &__commander {
+        position: relative;
+        left: 30em;
+      }
+    }
+  }
+}
