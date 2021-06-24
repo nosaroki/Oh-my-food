@@ -2,4 +2,7 @@
 
 .footer {
     @include footerbloc();
+    ul{
+      list-style: none;
+    }
   }
