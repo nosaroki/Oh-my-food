@@ -19,7 +19,6 @@
       display: flex;
       justify-content: center;
       position: relative;
-      top: 42%;
       font-family: "Shrikhand", serif;
       color: #c7bc5bf6;
       font-weight: normal;
@@ -31,9 +30,9 @@
   #loading {
     display: inline-block;
     position: absolute;
-    width: 300px;
-    height: 300px;
-    border: 3px solid rgba(255, 255, 255, 0.3);
+    width: 200px;
+    height: 200px;
+    border: 3px solid $couleur-tertiaire;
     border-radius: 50%;
     border-top-color: #fff;
     animation: spin 1s ease-in-out infinite;

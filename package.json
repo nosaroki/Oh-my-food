@@ -1,5 +1,5 @@
 {
-  "name": "P3_ohmyfood",
+  "name": "P3OHMYFOOD",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,7 +15,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "browserslist": "last 4 versions",
+  "browserslist": "",
   "bugs": {
     "url": "https://github.com/wea2ne/NnenaOSAROKIO_3_04052021/issues"
   },

@@ -24,8 +24,9 @@
     padding: 3em 1em;
     background-color: $lightgrey;
   
-    > h2.slogan {
+    p {
       font-weight: 100;
+      font-size: 18px;
     }
   
     button.explore {
@@ -48,8 +49,7 @@
   @mixin fonctionnement__list {
     > li {
       list-style: none;
-      margin: 5px;
-      margin-bottom: 1.5em;
+      margin: 1.5em;
       position: relative;
       padding: 1.5em;
       border-radius: 15px;

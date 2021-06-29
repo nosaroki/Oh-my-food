@@ -66,7 +66,7 @@
   
     &__plats {
       > h2 {
-        padding-left: 1em;
+        padding-left: 2em;
         position: relative;
         font-weight: 300;
   
@@ -76,7 +76,7 @@
           height: 3px;
           width: 3em;
           bottom: -0.2em;
-          left: 1em;
+          left: 2em;
           position: absolute;
         }
       }
@@ -216,5 +216,6 @@
   
     > ul {
       padding-left: 1em;
+      list-style: none;
     }
   }

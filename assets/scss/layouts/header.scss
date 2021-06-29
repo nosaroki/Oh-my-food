@@ -10,5 +10,9 @@ body {
   .headerbarre {
     display: flex;
     justify-content: center;
+    &__logo {
+      height: 70%;
+      margin: 0.5em;
+    }
     @include headerbarre(1rem);
   }
