@@ -870,7 +870,7 @@ body {
   position: absolute;
 }
 .laCarte__plats > ul {
-  animation: animationMenu 1s ease-in 1;
+  animation: animationMenu 2s ease-in 1;
   overflow: hidden;
   padding-left: 0.5em;
 }
